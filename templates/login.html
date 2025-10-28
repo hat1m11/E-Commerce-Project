@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block title %}Login - 6ixe7ven{% endblock %}
+
+{% block content %}
+<main class="hero">
+    <h1>Welcome to 6ixe7ven</h1>
+    <p>Please login to continue</p>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+
+    
+    <div class="login-form">
+        <input type="text" placeholder="Username" class="input-field">
+        <input type="password" placeholder="Password" class="input-field">
+        <button class="login-btn">Login</button>
+    </div>
+
+    <div class="auth-options">
+        <button class="auth-btn">Register</button>
+        <button class="auth-btn">Continue as Guest</button>
+    </div>
+</main>
+{% endblock %}

@@ -1,0 +1,221 @@
+/* Basic styling */
+body {
+    margin: 0;
+    font-family: 'Times New Roman', Times, serif;
+    background-color: #f5f7fa;
+}
+
+/* Top navigation bar */
+.navbar {
+    background-color: #ffffff;
+    color: #3d4f66;
+    display: flex;
+    padding: 20px 40px;
+    align-items: center;
+    border-bottom: 1px solid #d6dde6;
+    box-shadow: 0 1px 3px rgba(74, 93, 122, 0.1);
+}
+
+/* 6ixe7ven logo */
+.logo {
+    font-size: 20px;
+    font-weight: bold;
+    color: #4a5d7a;
+    letter-spacing: 3px;
+    transition: color 0.4s ease;
+}
+
+.logo:hover {
+    color: #2a3d5a;
+    cursor: pointer;
+}
+
+/* Search bar */
+.search-bar {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    margin: 0 50px;
+    position: relative;
+}
+
+/* Search input field */
+.search-bar input {
+    font-family: 'Times New Roman', Times, serif;
+    width: 400px;
+    padding: 10px 15px;
+    border: 1px solid #d6dde6;
+    border-radius: 6px;
+    font-size: 14px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.search-bar input:focus {
+    outline: none;
+    border-color: #4a5d7a;
+    box-shadow: 0 0 8px rgba(74, 93, 122, 0.2);
+}
+
+/* Navigation links */
+nav {
+    display: flex;
+    gap: 35px;
+    align-items: center;
+    margin-left: 150px;
+}
+
+nav a {
+    color: #4a5d7a;
+    text-decoration: none;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    transition: color 0.5s ease;
+    position: relative;
+}
+
+nav a:hover {
+    color: #2a3d5a;
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: #4a5d7a;
+    transition: width 0.4s ease;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+/* Hero section */
+.hero {
+    text-align: center;
+    padding: 80px 20px;
+    background: linear-gradient(135deg, #ffffff 0%, #f5f7fa 100%);
+    margin: 40px auto;
+    max-width: 900px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(74, 93, 122, 0.1);
+}
+
+.hero h1 {
+    font-size: 48px;
+    margin-bottom: 15px;
+    color: #3d4f66;
+    font-weight: normal;
+    letter-spacing: 2px;
+}
+
+.hero p {
+    font-size: 18px;
+    color: #5a6d8a;
+    margin-bottom: 30px;
+    letter-spacing: 0.5px;
+}
+
+/* Button */
+.shop-btn {
+    padding: 14px 35px;
+    background-color: #4a5d7a;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-family: 'Times New Roman', Times, serif;
+    transition: background-color 0.5s ease, transform 0.3s ease;
+}
+
+.shop-btn:hover {
+    background-color: #2a3d5a;
+    transform: translateY(-2px);
+}
+
+/* Footer */
+.footer {
+    background-color: #f5f7fa;
+    color: #5a6d8a;
+    text-align: center;
+    padding: 25px;
+    margin-top: 60px;
+    border-top: 1px solid #d6dde6;
+    letter-spacing: 0.5px;
+}
+
+/* Login form */
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    max-width: 380px;
+    margin: 30px auto;
+}
+
+.input-field {
+    padding: 14px;
+    border: 1px solid #d6dde6;
+    border-radius: 6px;
+    font-size: 15px;
+    font-family: 'Times New Roman', Times, serif;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.input-field:focus {
+    outline: none;
+    border-color: #4a5d7a;
+    box-shadow: 0 0 8px rgba(74, 93, 122, 0.2);
+}
+
+.login-btn {
+    padding: 14px;
+    background-color: #4a5d7a;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-family: 'Times New Roman', Times, serif;
+    transition: background-color 0.5s ease, transform 0.3s ease;
+}
+
+.login-btn:hover {
+    background-color: #2a3d5a;
+    transform: translateY(-2px);
+}
+
+/* Auth options */
+.auth-options {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 25px;
+}
+
+.auth-btn {
+    padding: 12px 24px;
+    background-color: white;
+    color: #4a5d7a;
+    border: 2px solid #4a5d7a;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 13px;
+    font-family: 'Times New Roman', Times, serif;
+    letter-spacing: 1px;
+    transition: all 0.5s ease;
+}
+
+.auth-btn:hover {
+    background-color: #4a5d7a;
+    color: white;
+    transform: translateY(-2px);
+}

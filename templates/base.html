@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+    <title>{% block title %}6ixe7ven{% endblock %}</title>
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+        <div class="logo">6ixe7ven</div>
+
+        <div class="search-bar">
+            <input type="text" placeholder="Search products...">
+        </div>
+
+        <nav>
+            <a href="/">Home</a>
+            <a href="/products">Products</a>
+            <a href="/login">Login</a>
+            <a href="/basket">Cart</a>
+        </nav>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <p>© 2025 Project 67. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
