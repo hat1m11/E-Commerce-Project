@@ -1,27 +1,33 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>E-Commerce Project 67</title>
-</head>
-<body>
+{% extends "base.html" %}
 
-    <header>
-        <h1>013</h1>
-    </header>
+{% block title %}Home - 6ixe7ven{% endblock %}
 
-    <main>
-        <section>
-            <h2>Featured Products</h2>
-            <p>Check out our latest products!!</p>
-        </section>
-    </main>
+{% block content %}
+<section class="home-hero">
+    <div class="category-tabs">
+        <button class="tab active">Men</button>
+        <button class="tab">Women</button>
+        <button class="tab">Children</button>
+    </div>
 
-    <footer>
-        
-    </footer>
+    <div class="product-carousel">
+        <button class="nav prev">← Previous</button>
 
+        <div class="product-card">
+            <h3>Men’s Overcoat</h3>
+            <p>Ideal and fashionable</p>
+            <span class="price">£120.00</span>
+        </div>
 
-</body>
-</html></html>
+        <button class="nav next">Next →</button>
+    </div>
+
+    <div class="pagination">
+        <button class="page active">1</button>
+        <button class="page">2</button>
+        <button class="page">3</button>
+        <button class="page">4</button>
+        <button class="page">5</button>
+    </div>
+</section>
+{% endblock %}
