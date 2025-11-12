@@ -11,31 +11,17 @@ public class Math {
     }
 
     /********************************
-     Developer: Mohammed Yusuf
-     University ID: 240104887
-     Function: This function subtracts one number from another and returns the result.
-    ********************************/
-    public int subtract(int a, int b) {
-    return a - b;
-}
-
-
-
-
-    /********************************
-     Developer: Zain ul Abidin
-     University ID: 240174592
-     Function: This function divides one number from another and returns the result.
+     Developer: Yusuf
+     University ID: [Team Member 1 ID]
+     Function: Describe what your function does here (e.g., returns the maximum of two numbers)
     ********************************/
     // Write your function implementation here
 
-public int subtract(int a, int b) {
-    return a / b;
-}
+
 
     /********************************
-     Developer: Wafa
-     University ID: [Team Member 3 ID]
+     Developer: Zain
+     University ID: [Team Member 2 ID]
      Function: Describe what your function does here
     ********************************/
     // Write your function implementation here
@@ -43,13 +29,28 @@ public int subtract(int a, int b) {
 
 
     /********************************
-     Developer: Rohan
-     University ID: 240147194
-     Function: This function finds the modulus of the 2 numbers when provided.
+     Developer: Wafa Ali
+     University ID: 230018613
+     Function: This function takes two integers and returs the minimimum one.
     ********************************/
-    public int Modulus(int a, int b) {
-        return a % b;
+    public int min(int a , int b){
+        if (a < b){
+            return a;
+        } else {
+            return b;
+        }
     }
+
+
+
+    /********************************
+     Developer: Rohan
+     University ID: [Team Member 4 ID]
+     Function: Describe what your function does here
+    ********************************/
+    // Write your function implementation here
+
+
 
     /********************************
      Developer: Arifa
