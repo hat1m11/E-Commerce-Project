@@ -44,12 +44,12 @@ public int subtract(int a, int b) {
 
     /********************************
      Developer: Rohan
-     University ID: [Team Member 4 ID]
-     Function: Describe what your function does here
+     University ID: 240147194
+     Function: This function finds the modulus of the 2 numbers when provided.
     ********************************/
-    // Write your function implementation here
-
-
+    public int Modulus(int a, int b) {
+        return a % b;
+    }
 
     /********************************
      Developer: Arifa
