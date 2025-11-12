@@ -11,11 +11,14 @@ public class Math {
     }
 
     /********************************
-     Developer: Yusuf
-     University ID: [Team Member 1 ID]
-     Function: Describe what your function does here (e.g., returns the maximum of two numbers)
+     Developer: Mohammed Yusuf
+     University ID: 240104887
+     Function: This function subtracts one number from another and returns the result.
     ********************************/
-    // Write your function implementation here
+    public int subtract(int a, int b) {
+    return a - b;
+}
+
 
 
 
