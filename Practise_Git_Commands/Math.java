@@ -10,21 +10,29 @@ public class Math {
         return a + b; 
     }
 
-    /********************************
-     Developer: Yusuf
-     University ID: [Team Member 1 ID]
-     Function: Describe what your function does here (e.g., returns the maximum of two numbers)
+     /********************************
+     Developer: Mohammed Yusuf
+     University ID: 240104887
+     Function: This function subtracts one number from another and returns the result.
+    ********************************/
+    // Write your function implementation here
+    public int subtract(int a, int b) {
+    return a - b;
+}
+
+
+
+     /********************************
+     Developer: Zain ul Abidin
+     University ID: 240174592
+     Function: This function divides one number from another and returns the result.
     ********************************/
     // Write your function implementation here
 
 
-
-    /********************************
-     Developer: Zain
-     University ID: [Team Member 2 ID]
-     Function: Describe what your function does here
-    ********************************/
-    // Write your function implementation here
+    public double divide(double a, double b) {
+    return a / b;
+    }
 
 
 
@@ -43,13 +51,17 @@ public class Math {
 
 
 
-    /********************************
+     /********************************
      Developer: Rohan
-     University ID: [Team Member 4 ID]
-     Function: Describe what your function does here
+     University ID: 240147194
+     Function: This function finds the modulus of the 2 numbers when provided.
     ********************************/
     // Write your function implementation here
 
+
+    public int Modulus(int a, int b) {
+        return a % b;
+    }
 
 
     /********************************
