@@ -48,10 +48,10 @@ public class Math {
 
     /********************************
      Developer: Arifa
-     University ID: [Team Member 5 ID]
-     Function: Describe what your function does here
+     University ID: 240189703
+     Function: This function multiplies the two numbers
     ********************************/
-    // Write your function implementation here
-
-}
+    public int multiply(int a , int b){
+        return a * b;
+    }
     
