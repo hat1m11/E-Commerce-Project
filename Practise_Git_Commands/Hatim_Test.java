@@ -1,20 +1,18 @@
-public class Hatim_Test{
+/********************************
+ Tester: Hatim Qazi Haider Hussain
+ University ID: 240204258
+ Function: This function tests the divide() function implementation by Zain.
+********************************/
 
-    /********************************
-    Tester: Hatim Qazi Haider Hussain
-     University ID: 240204258
-    Function: This function tests the subtract() function implementation by Yusuf.
-    ********************************/
+public class Hatim_DivideTest {
 
-   
     public static void main(String[] args) {
-        Math math = new Math();
-        int result = math.subtract(10, 5);
-        if (result == 5) {
-            System.out.println("Test passed: subtract(10, 5) returned 5");
-        } else {
-            System.out.println("Test failed: subtract(10, 5) returned " + result);
-        }
-    }
+        Math mObj = new Math();
+        int result = mObj.divide(20, 5);
 
+        if(result == 4)
+            System.out.println("Correct Implementation");
+        else
+            System.out.println("Error in Implementation");
+    }
 }
