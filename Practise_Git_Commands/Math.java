@@ -73,3 +73,4 @@ public class Math {
         return a * b;
     }
     
+}
