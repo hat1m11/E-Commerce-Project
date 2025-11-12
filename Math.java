@@ -23,13 +23,15 @@ public class Math {
 
 
     /********************************
-     Developer: Zain
-     University ID: [Team Member 2 ID]
-     Function: Describe what your function does here
+     Developer: Zain ul Abidin
+     University ID: 240174592
+     Function: This function divides one number from another and returns the result.
     ********************************/
     // Write your function implementation here
 
-
+public int subtract(int a, int b) {
+    return a / b;
+}
 
     /********************************
      Developer: Wafa
