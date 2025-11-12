@@ -4,13 +4,13 @@
  Function: This function tests the divine() function implementation by Hatim.
 ********************************/
 
-public class Zain_DivideTest {
+public class Zain_SumTest {
 
     public static void main(String[] args) {
         Math mObj = new Math();
-        int result = mObj.divide(20, 5);
+        int result = mObj.sum(20, 5);
 
-        if(result == 4)
+        if(result == 25)
             System.out.println("Correct Implementation");
         else
             System.out.println("Error in Implementation");
