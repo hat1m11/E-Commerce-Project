@@ -3,25 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>E-Commerce Project 67</title>
+    <title>6ixty7even</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
 </head>
 <body>
 
     <header>
-        <h1>013</h1>
+      <div class="header-left">
+        <i class="fa-solid fa-bars"></i>
+        <img src="images/logo.png" alt="6ixty7even Logo" class="logo">
+        <h1>6ixty7even</h1>
+      </div>
+      <div class="search-bar">
+        <input type="text" placeholder="Search for products...">
+        <button><i class="fa-solid fa-magnifying-glass"></i></button>
+      </div>
+      <div class="header-right">
+        <i class="fa-solid fa-user"></i>
+        <i class="fa-solid fa-shopping-cart"></i>
+        <i class="fa-solid fa-heart"></i>
+        <i class="fa-solid fa-robot"></i>
+      </div>
+
     </header>
 
     <main>
         <section>
-            <h2>Featured Products</h2>
-            <p>Check out our latest products!!</p>
-        </section>
+          <section class="banner">
+          <div class="rotation">
+          <img src="images/banner/banner1.jpg" alt="Banner 1" class="rotation-image active">
+            <img src="images/banner/banner2.jpg" alt="Banner 2" class="rotation-image">
+            <img src="images/banner/banner3.jpg" alt="Banner 3" class="rotation-image">
+           
+            </div>
+            </section>
+
+</section>
+
     </main>
 
     <footer>
         
     </footer>
+<script>
+        const images = document.querySelectorAll('.rotation-image');
+        let current = 0;
 
+        function rotateImages() {
+            images[current].classList.remove('active');
+            current = (current + 1) % images.length;
+            images[current].classList.add('active');
+        }
+
+        setInterval(rotateImages, 3000);
+    </script>
 
 </body>
 </html></html>
