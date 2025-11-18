@@ -3,25 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+
+    <!-- Global stylesheet (applies to all pages) -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
+
+    <!-- Page-specific CSS -->
+    {% block extra_css %}{% endblock %}
+
     <title>{% block title %}6ixe7ven{% endblock %}</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
 
     <!-- NAVBAR -->
     <header class="navbar">
-        <div class="logo">6ixe7ven</div>
 
-        <div class="search-bar">
-            <input type="text" placeholder="Search products...">
+        <!-- LOGO (image + text) -->
+        <div class="logo-container">
+            <img src="{{ url_for('static', filename='images/6ixe7venLogo.png') }}" 
+                 alt="6ixe7ven Logo" class="logo-img">
+            <span class="logo-text">6ixe7ven</span>
         </div>
 
+        <!-- SEARCH BAR -->
+        <div class="search-bar">
+
+            <select class="category-select">
+                <option value="">All</option>
+                <option value="men">Men</option>
+                <option value="women">Women</option>
+                <option value="children">Children</option>
+                <option value="shoes">Shoes</option>
+                <option value="accessories">Accessories</option>
+            </select>
+
+            <input type="text" placeholder="Search products...">
+
+            <button class="search-btn">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+
+        </div>
+
+        <!-- NAV LINKS -->
         <nav>
             <a href="/">Home</a>
-            <a href="/products">Products</a>
             <a href="/login">Login</a>
             <a href="/basket">Cart</a>
+            <a class="contact-text" href="/contact">Contact Us</a>
         </nav>
+
     </header>
 
     <!-- MAIN CONTENT -->
@@ -33,6 +65,8 @@
     <footer class="footer">
         <p>© 2025 Project 67. All rights reserved.</p>
     </footer>
+
+    {% block extra_js %}{% endblock %}
 
 </body>
 </html>

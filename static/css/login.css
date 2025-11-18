@@ -1,0 +1,103 @@
+/* Login container */
+.hero {
+    max-width: 450px;
+    margin: 60px auto;
+    padding: 40px 30px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(74, 93, 122, 0.15);
+    text-align: center;
+}
+
+/* Title */
+.hero h1 {
+    font-size: 32px;
+    color: #3d4f66;
+    margin-bottom: 10px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+/* Subtitle */
+.hero p {
+    font-size: 16px;
+    color: #5a6d8a;
+    margin-bottom: 30px;
+}
+
+/* Form container */
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+/* Input fields */
+.input-field {
+    padding: 14px 16px;
+    border: 1px solid #d6dde6;
+    border-radius: 6px;
+    font-size: 15px;
+    font-family: 'Times New Roman', Times, serif;
+    transition: all 0.3s ease;
+}
+
+.input-field:focus {
+    outline: none;
+    border-color: #4a5d7a;
+    box-shadow: 0 0 0 3px rgba(74, 93, 122, 0.1);
+}
+
+/* Login button */
+.login-btn {
+    padding: 14px;
+    background-color: #4a5d7a;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-family: 'Times New Roman', Times, serif;
+    transition: all 0.3s ease;
+}
+
+.login-btn:hover {
+    background-color: #3a4d6a;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(74, 93, 122, 0.3);
+}
+
+/* Auth options */
+.auth-options {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+/* Secondary buttons */
+.auth-btn {
+    padding: 12px 24px;
+    background-color: white;
+    color: #4a5d7a;
+    border: 2px solid #4a5d7a;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    font-family: 'Times New Roman', Times, serif;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+    min-width: 130px;
+}
+
+.auth-btn:hover {
+    background-color: #4a5d7a;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(74, 93, 122, 0.2);
+}
