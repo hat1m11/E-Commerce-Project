@@ -55,13 +55,13 @@ header{
         .search-bar button {
             padding: 8px 16px;
             border: none;
-            background-color: #ff4081
-            color: #fff;
+            background-color: #d3d3d3;
+            color: #333;
             border-radius: 0 20px 20px 0;
             cursor: pointer;
         }
         .search-bar button:hover {
-            background-color: #e03570;
+            background-color: #b0b0b0;
         }
     .header-right {
         display: flex;
@@ -127,7 +127,7 @@ contact page p {
 }
 .contact-info, .contact-form {
     flex: 1 1 400px;
-    background-color: f9f9f9;
+    background-color: #f9f9f9;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px px rgba(0, 0, 0, 0.1);
@@ -165,8 +165,101 @@ contact-form form label {
     background-color: #e03570;
 }
 
+.signup-wrapper {
+    width: 100%;
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    
+
+}
   
+.signup-layout {
+    display: flex;
+    align-items: flex-start;
+    gap: 40px;
+}
 
+.signup-title {
+   font-size: 32px;
+   margin: 0 0 10px 0;
+   width: 700px;
+   text-align: left;
+}
+
+.signup-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    width: 100%;
+    
+}
+
+.form-section {
+    flex: 1 1 700px;
+    min-height: 600px;
+    max-width: 700px;
+    background-color: #f9f9f9;
+    padding: 28px;
+    border-radius: 8px;
+    box-shadow: 0 0px 12px rgba(0, 0, 0, 0.08);
+}
    
+.form-section label {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    font-weight: bold;
+    font-size: 14px;
+}
 
+.form-section input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+    transition: border 0.2s ease;
+}
+
+.form-section input:focus {
+    border-color: #130f61;
+    outline: none;
+}
+
+
+.signup-button {
+    width: 100%;
+    padding: 14px;
+    margin-top: 20px;
+    border: none;
+    background-color: #683a3a;
+    color: #fff;
+    font-size: 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    transition: background-color 0.3s ease;
+}
+
+.signup-button:hover {
+    background-color: #130f61;
+}
+
+.login-text {
+    text-align: center;
+    margin-top: 12px;
+    font-size: 14px;
+}
+
+.login-text a {
+    color: #130f61;
+    text-decoration: underline;
+    font-weight: bold;
+}
 
