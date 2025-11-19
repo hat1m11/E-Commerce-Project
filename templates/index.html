@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>6ixty7even</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 </head>
@@ -13,8 +13,8 @@
     <header>
       <div class="header-left">
         <i class="fa-solid fa-bars"></i>
-        <img src="images/logo.png" alt="6ixty7even Logo" class="logo">
-        <h1>6ixty7even</h1>
+       <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo" class="logo">
+        <h1>SIX7EVEN</h1>
       </div>
       <div class="search-bar">
         <input type="text" placeholder="Search for products...">
@@ -33,9 +33,11 @@
         <section>
           <section class="banner">
           <div class="rotation">
-          <img src="images/banner/banner1.jpg" alt="Banner 1" class="rotation-image active">
-            <img src="images/banner/banner2.jpg" alt="Banner 2" class="rotation-image">
-            <img src="images/banner/banner3.jpg" alt="Banner 3" class="rotation-image">
+          <img src="{{ url_for('static', filename='images/banner1.jpg') }}" alt="Banner 1" class="rotation-image active">
+
+          <img src="{{ url_for('static', filename='images/banner2.jpg') }}" alt="Banner 2" class="rotation-image">
+
+          <img src="{{ url_for('static', filename='images/banner3.jpg') }}" alt="Banner 3" class="rotation-image">
            
             </div>
             </section>
