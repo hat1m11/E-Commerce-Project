@@ -3,7 +3,7 @@
 $title = "Login - 6ixe7ven";
 
 // PAGE-SPECIFIC CSS
-$extra_css = '<link rel="stylesheet" href="/static/css/login.css">';
+$extra_css = '<link rel="stylesheet" href="static/css/login.css">';
 
 // Start capturing the page content
 ob_start();
@@ -20,7 +20,7 @@ ob_start();
     </div>
 
     <div class="auth-options">
-        <a href="/register.php" class="auth-btn">Register</a>
+        <a href="register.php" class="auth-btn">Register</a>
         <button class="auth-btn">Continue as Guest</button>
     </div>
 </main>

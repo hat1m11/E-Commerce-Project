@@ -3,7 +3,7 @@
 $title = "Home - 6ixe7ven";
 
 // PAGE-SPECIFIC CSS (optional for hero section)
-$extra_css = '<link rel="stylesheet" href="/static/css/index.css">';
+$extra_css = '<link rel="stylesheet" href="static/css/index.css">';
 
 // START CAPTURING PAGE CONTENT
 ob_start();

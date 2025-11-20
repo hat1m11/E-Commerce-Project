@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- GLOBAL CSS -->
-    <link rel="stylesheet" href="/static/css/base.css">
+    <link rel="stylesheet" href="static/css/base.css">
 
     <!-- PAGE-SPECIFIC CSS -->
     <?php if (isset($extra_css)) echo $extra_css; ?>
@@ -22,7 +22,7 @@
 
         <!-- LOGO -->
         <div class="logo-container">
-            <img src="/static/images/6ixe7venLogo.png" 
+            <img src="static/images/6ixe7venLogo.png" 
                  alt="6ixe7ven Logo" 
                  class="logo-img">
             <span class="logo-text">6ixe7ven</span>
@@ -50,10 +50,10 @@
 
         <!-- NAV LINKS -->
         <nav>
-            <a href="/index.php">Home</a>
-            <a href="/login.php">Login</a>
-            <a href="/basket.php">Cart</a>
-            <a class="contact-text" href="/contact.php">Contact Us</a>
+            <a href="index.php">Home</a>
+            <a href="login.php">Login</a>
+            <a href="basket.php">Cart</a>
+            <a class="contact-text" href="contact.php">Contact Us</a>
         </nav>
 
     </header>

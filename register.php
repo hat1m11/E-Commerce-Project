@@ -1,8 +1,11 @@
 <?php
 $title = "Sign Up - 6ixe7ven";
 
-$extra_css = '<link rel="stylesheet" href="/static/css/register.css">';
-$extra_js  = '<script src="/static/js/register.js"></script>';
+// FIXED CSS PATH (remove leading slash)
+$extra_css = '<link rel="stylesheet" href="static/css/register.css">';
+
+// JS path was already correct
+$extra_js  = '<script src="static/js/register.js"></script>';
 
 ob_start();
 ?>
@@ -43,7 +46,7 @@ ob_start();
                 <button type="submit" class="signup-button">Sign Up</button>
 
                 <p class="login-text">
-                    Already have an account? <a href="/login.php">Log in here</a>.
+                    Already have an account? <a href="login.php">Log in here</a>.
                 </p>
 
             </form>

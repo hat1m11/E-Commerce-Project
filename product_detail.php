@@ -1,13 +1,17 @@
 <?php
 $title = "Product Details - 6ixe7ven";
-$extra_css = '<link rel="stylesheet" href="/static/css/product_details.css">';
+
+// FIXED CSS PATH
+$extra_css = '<link rel="stylesheet" href="static/css/product_details.css">';
+
 ob_start();
 ?>
 
 <div class="product-wrapper">
 
     <div class="product-image">
-        <img src="/static/images/products/sample_product.jpg" alt="Product Image">
+        <!-- FIXED IMAGE PATH -->
+        <img src="static/images/products/sample_product.jpg" alt="Product Image">
     </div>
 
     <div class="product-info">

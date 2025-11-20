@@ -3,7 +3,7 @@
 $title = "Home - 6ixe7ven";
 
 // OPTIONAL PAGE CSS (if needed)
-$extra_css = '<link rel="stylesheet" href="/static/css/index.css">';
+$extra_css = '<link rel="stylesheet" href="static/css/index.css">';
 
 // CAPTURE MAIN PAGE CONTENT
 ob_start();
