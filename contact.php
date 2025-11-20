@@ -1,12 +1,13 @@
-{% extends "base.html" %}
+<?php
+// PAGE TITLE
+$title = "Contact Us - 6ixe7ven";
 
-{% block title %}Contact Us - 6ixe7ven{% endblock %}
+// PAGE-SPECIFIC CSS
+$extra_css = '<link rel="stylesheet" href="/static/css/contact.css">';
 
-{% block extra_css %}
-<link rel="stylesheet" href="{{ url_for('static', filename='css/contact.css') }}">
-{% endblock %}
-
-{% block content %}
+// Start capturing the content block
+ob_start();
+?>
 
 <main class="contact-wrapper">
 
@@ -45,11 +46,16 @@
 
                 <button type="submit" class="contact-btn">Send Message</button>
             </form>
-
         </div>
 
     </div>
 
 </main>
 
-{% endblock %}
+<?php
+// END capturing
+$content = ob_get_clean();
+
+// LOAD base layout
+include "base.php";
+?>

@@ -4,14 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Global stylesheet (applies to all pages) -->
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
+    <!-- GLOBAL CSS -->
+    <link rel="stylesheet" href="/static/css/base.css">
 
-    <!-- Page-specific CSS -->
-    {% block extra_css %}{% endblock %}
+    <!-- PAGE-SPECIFIC CSS -->
+    <?php if (isset($extra_css)) echo $extra_css; ?>
 
-    <title>{% block title %}6ixe7ven{% endblock %}</title>
+    <title><?php echo isset($title) ? $title : "6ixe7ven"; ?></title>
 
+    <!-- ICONS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
@@ -19,10 +20,11 @@
     <!-- NAVBAR -->
     <header class="navbar">
 
-        <!-- LOGO (image + text) -->
+        <!-- LOGO -->
         <div class="logo-container">
-            <img src="{{ url_for('static', filename='images/6ixe7venLogo.png') }}" 
-                 alt="6ixe7ven Logo" class="logo-img">
+            <img src="/static/images/6ixe7venLogo.png" 
+                 alt="6ixe7ven Logo" 
+                 class="logo-img">
             <span class="logo-text">6ixe7ven</span>
         </div>
 
@@ -48,17 +50,20 @@
 
         <!-- NAV LINKS -->
         <nav>
-            <a href="/">Home</a>
-            <a href="/login">Login</a>
-            <a href="/basket">Cart</a>
-            <a class="contact-text" href="/contact">Contact Us</a>
+            <a href="/index.php">Home</a>
+            <a href="/login.php">Login</a>
+            <a href="/basket.php">Cart</a>
+            <a class="contact-text" href="/contact.php">Contact Us</a>
         </nav>
 
     </header>
 
     <!-- MAIN CONTENT -->
     <main>
-        {% block content %}{% endblock %}
+        <?php 
+        // This prints the page content included by child pages
+        if (isset($content)) echo $content; 
+        ?>
     </main>
 
     <!-- FOOTER -->
@@ -66,7 +71,8 @@
         <p>© 2025 Project 67. All rights reserved.</p>
     </footer>
 
-    {% block extra_js %}{% endblock %}
+    <!-- PAGE-SPECIFIC JS -->
+    <?php if (isset($extra_js)) echo $extra_js; ?>
 
 </body>
 </html>
