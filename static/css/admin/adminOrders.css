@@ -1,0 +1,54 @@
+/* ----------------------------------------
+   STATUS BADGES
+----------------------------------------- */
+
+.status {
+    padding: 6px 12px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: capitalize;
+    display: inline-block;
+}
+
+.status-pending {
+    background: #fff4e5;
+    color: #d48806;
+    border: 1px solid #ffd591;
+}
+
+.status-shipped {
+    background: #e6f7ff;
+    color: #096dd9;
+    border: 1px solid #91d5ff;
+}
+
+.status-delivered {
+    background: #f6ffed;
+    color: #389e0d;
+    border: 1px solid #b7eb8f;
+}
+
+.status-cancelled {
+    background: #fff1f0;
+    color: #cf1322;
+    border: 1px solid #ffa39e;
+}
+
+/* ----------------------------------------
+   ORDERS TABLE BUTTON FIXES
+----------------------------------------- */
+
+.admin-table .btn {
+    margin-right: 6px;
+}
+
+.table-title {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #3d4f66;
+}
+
+.content-header .add-btn {
+    margin-top: 10px;
+}

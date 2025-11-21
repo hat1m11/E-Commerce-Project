@@ -1,0 +1,121 @@
+/* ----------------------------------------
+   SETTINGS PAGE CONTAINER
+----------------------------------------- */
+
+.settings-container {
+    background: white;
+    padding: 30px;
+    border-radius: 14px;
+    box-shadow: 0 4px 12px rgba(74, 93, 122, 0.08);
+    max-width: 800px;
+}
+
+.settings-form {
+    display: flex;
+    flex-direction: column;
+}
+
+/* ----------------------------------------
+   TITLES & LABELS
+----------------------------------------- */
+
+.section-title {
+    font-size: 20px;
+    font-weight: 600;
+    color: #3d4f66;
+    margin-top: 15px;
+    margin-bottom: 20px;
+}
+
+.settings-label {
+    margin-top: 15px;
+    margin-bottom: 6px;
+    color: #4a5d7a;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.settings-input {
+    padding: 12px 14px;
+    border-radius: 8px;
+    border: 1px solid #ccd3db;
+    font-size: 16px;
+    background: #f9fbfd;
+    outline: none;
+    transition: all 0.3s;
+}
+
+.settings-input:focus {
+    border-color: #4a5d7a;
+    background: white;
+}
+
+/* ----------------------------------------
+   SWITCH TOGGLES
+----------------------------------------- */
+
+.toggle-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 0;
+    border-bottom: 1px solid #ececec;
+    font-size: 15px;
+    color: #3d4f66;
+    font-weight: 500;
+}
+
+/* Toggle switch style */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 48px;
+    height: 24px;
+}
+
+.switch input {
+    display: none;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    background: #ccc;
+    border-radius: 24px;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 3px;
+    bottom: 3px;
+    background: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+/* Active state */
+input:checked + .slider {
+    background: #4a5d7a;
+}
+
+input:checked + .slider:before {
+    transform: translateX(24px);
+}
+
+/* ----------------------------------------
+   SAVE BUTTON
+----------------------------------------- */
+
+.save-btn {
+    margin-top: 25px;
+    width: 180px;
+    align-self: flex-end;
+}

@@ -1,0 +1,53 @@
+/* ----------------------------------------
+   USER ROLES
+----------------------------------------- */
+
+.role {
+    padding: 6px 12px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: capitalize;
+    display: inline-block;
+}
+
+.role-user {
+    background: #e6f4ff;
+    color: #0958d9;
+    border: 1px solid #69b1ff;
+}
+
+.role-admin {
+    background: #fff7e6;
+    color: #d48806;
+    border: 1px solid #ffd591;
+}
+
+
+/* ----------------------------------------
+   USER STATUS BADGES
+----------------------------------------- */
+
+.user-status {
+    padding: 6px 12px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+
+.user-status.active {
+    background: #f6ffed;
+    color: #389e0d;
+    border: 1px solid #b7eb8f;
+}
+
+.user-status.banned {
+    background: #fff1f0;
+    color: #cf1322;
+    border: 1px solid #ffa39e;
+}
+
+.admin-table .btn {
+    margin-right: 6px;
+}

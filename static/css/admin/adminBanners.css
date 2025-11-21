@@ -1,0 +1,48 @@
+/* ----------------------------------------
+   BANNER THUMBNAIL STYLES
+----------------------------------------- */
+
+.banner-thumb {
+    width: 150px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 1px solid #d6dde6;
+}
+
+/* ----------------------------------------
+   STATUS BADGES
+----------------------------------------- */
+
+.status {
+    padding: 6px 12px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+
+.status-active {
+    background: #f6ffed;
+    color: #389e0d;
+    border: 1px solid #b7eb8f;
+}
+
+.status-hidden {
+    background: #fff4e5;
+    color: #d46b08;
+    border: 1px solid #ffd591;
+}
+
+/* ----------------------------------------
+   BUTTON SPACING
+----------------------------------------- */
+
+.admin-table .btn {
+    margin-right: 6px;
+}
+
+.add-btn {
+    float: right;
+    margin-top: -50px;
+}

@@ -1,0 +1,22 @@
+/* PRODUCT PAGE SPECIFIC STYLES */
+
+.add-btn {
+    float: right;
+    margin-top: -50px;
+}
+
+.product-thumb {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 1px solid #d6dde6;
+}
+
+.admin-table td {
+    vertical-align: middle;
+}
+
+.admin-table .btn {
+    margin-right: 8px;
+}

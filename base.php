@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- GLOBAL CSS -->
-    <link rel="stylesheet" href="static/css/base.css">
+    <link rel="stylesheet" href="/E-Commerce-Project/static/css/base.css">
 
     <!-- PAGE-SPECIFIC CSS -->
     <?php if (isset($extra_css)) echo $extra_css; ?>
@@ -20,17 +20,12 @@
     <!-- NAVBAR -->
     <header class="navbar">
 
-        <!-- LOGO -->
         <div class="logo-container">
-            <img src="static/images/6ixe7venLogo.png" 
-                 alt="6ixe7ven Logo" 
-                 class="logo-img">
+            <img src="/E-Commerce-Project/static/images/6ixe7venLogo.png" alt="6ixe7ven Logo" class="logo-img">
             <span class="logo-text">6ixe7ven</span>
         </div>
 
-        <!-- SEARCH BAR -->
         <div class="search-bar">
-
             <select class="category-select">
                 <option value="">All</option>
                 <option value="men">Men</option>
@@ -45,28 +40,22 @@
             <button class="search-btn">
                 <i class="fa-solid fa-magnifying-glass"></i>
             </button>
-
         </div>
 
-        <!-- NAV LINKS -->
         <nav>
-            <a href="index.php">Home</a>
-            <a href="login.php">Login</a>
-            <a href="basket.php">Cart</a>
-            <a class="contact-text" href="contact.php">Contact Us</a>
+            <a href="/E-Commerce-Project/index.php">Home</a>
+            <a href="/E-Commerce-Project/login.php">Login</a>
+            <a href="/E-Commerce-Project/cart.php">Cart</a>
+            <a class="contact-text" href="/E-Commerce-Project/contact.php">Contact Us</a>
         </nav>
 
     </header>
 
     <!-- MAIN CONTENT -->
     <main>
-        <?php 
-        // This prints the page content included by child pages
-        if (isset($content)) echo $content; 
-        ?>
+        <?php if (isset($content)) echo $content; ?>
     </main>
 
-    <!-- FOOTER -->
     <footer class="footer">
         <p>© 2025 Project 67. All rights reserved.</p>
     </footer>

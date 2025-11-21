@@ -2,41 +2,87 @@
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
-// PAGE TITLE
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+
 $title = "Home - 6ixe7ven";
 
-// PAGE-SPECIFIC CSS
-$extra_css = '<link rel="stylesheet" href="static/css/index.css">';
+$extra_css = '<link rel="stylesheet" href="/E-Commerce-Project/static/css/index.css">';
 
+$extra_js = '
+<script src="/E-Commerce-Project/static/js/bannerSlide.js"></script>
+<script src="/E-Commerce-Project/static/js/cart.js"></script>
+';
 
-// PAGE-SPECIFIC JS
-$extra_js = '<script src="static/js/bannerSlide.js"></script>';
-
-// START CAPTURING PAGE CONTENT
 ob_start();
 ?>
 
-<!-- Banner section -->
 <section class="banner">
     <div class="rotation">
-        <img src="static/images/banner/banner1.png" class="rotation-image active" alt="Banner 1">
-        <img src="static/images/banner/banner2.jpg" class="rotation-image" alt="Banner 2">
-        <img src="static/images/banner/banner3.jpg" class="rotation-image" alt="Banner 3">
+        <img src="/E-Commerce-Project/static/images/banner/banner1.png" class="rotation-image active">
+        <img src="/E-Commerce-Project/static/images/banner/banner2.jpg" class="rotation-image">
+        <img src="/E-Commerce-Project/static/images/banner/banner3.jpg" class="rotation-image">
+
+        <button class="banner-arrow banner-prev">&#8249;</button>
+        <button class="banner-arrow banner-next">&#8250;</button>
+
+        <div class="banner-indicators">
+            <span class="banner-indicator active"></span>
+            <span class="banner-indicator"></span>
+            <span class="banner-indicator"></span>
+        </div>
     </div>
 </section>
 
-<div class="pagination">
-    <button class="page active">1</button>
-    <button class="page">2</button>
-    <button class="page">3</button>
-    <button class="page">4</button>
-    <button class="page">5</button>
-</div>
+<section class="product-section">
+    <h2 class="section-title">Featured Hoodies</h2>
+
+    <div class="product-grid">
+
+        <div class="product-card">
+            <img src="/E-Commerce-Project/static/images/hoodie1.jpeg">
+            <h3>6ixe7ven Hoodie 1</h3>
+            <p class="price">£39.99</p>
+            <button class="add-btn"
+                data-id="hoodie1"
+                data-name="6ixe7ven Hoodie 1"
+                data-price="39.99"
+                data-image="/E-Commerce-Project/static/images/hoodie1.jpeg">
+                Add to Cart
+            </button>
+        </div>
+
+        <div class="product-card">
+            <img src="/E-Commerce-Project/static/images/hoodie2.jpeg">
+            <h3>6ixe7ven Hoodie 2</h3>
+            <p class="price">£39.99</p>
+            <button class="add-btn"
+                data-id="hoodie2"
+                data-name="6ixe7ven Hoodie 2"
+                data-price="39.99"
+                data-image="/E-Commerce-Project/static/images/hoodie2.jpeg">
+                Add to Cart
+            </button>
+        </div>
+
+        <div class="product-card">
+            <img src="/E-Commerce-Project/static/images/hoodie3.jpeg">
+            <h3>6ixe7ven Hoodie 3</h3>
+            <p class="price">£39.99</p>
+            <button class="add-btn"
+                data-id="hoodie3"
+                data-name="6ixe7ven Hoodie 3"
+                data-price="39.99"
+                data-image="/E-Commerce-Project/static/images/hoodie3.jpeg">
+                Add to Cart
+            </button>
+        </div>
+
+    </div>
+</section>
 
 <?php
-// END CAPTURE AND STORE CONTENT
 $content = ob_get_clean();
-
-// LOAD BASE LAYOUT
 include "base.php";
 ?>

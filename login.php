@@ -13,11 +13,24 @@ ob_start();
     <h1>Welcome to 6ixe7ven</h1>
     <p>Please login to continue</p>
 
-    <div class="login-form">
-        <input type="text" placeholder="Username" class="input-field" name="username">
-        <input type="password" placeholder="Password" class="input-field" name="password">
-        <button class="login-btn">Login</button>
-    </div>
+    <!-- REAL FORM -->
+    <form action="controllers/admin/adminAuthController.php" method="POST" class="login-form">
+
+        <input type="text" 
+               placeholder="Username" 
+               class="input-field" 
+               name="username" 
+               required>
+
+        <input type="password" 
+               placeholder="Password" 
+               class="input-field" 
+               name="password" 
+               required>
+
+        <button class="login-btn" type="submit">Login</button>
+
+    </form>
 
     <div class="auth-options">
         <a href="register.php" class="auth-btn">Register</a>
