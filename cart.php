@@ -1,12 +1,13 @@
 <?php
 session_start();
+include "config.php";
 
 // PAGE TITLE
 $title = "Your Cart - 6ixe7ven";
 
 // PAGE CSS + JS
-$extra_css = '<link rel="stylesheet" href="static/css/cart.css">';
-$extra_js  = '<script src="static/js/cart.js"></script>';
+$extra_css = "<link rel='stylesheet' href='$BASE_URL/static/css/cart.css'>";
+$extra_js  = "<script src='$BASE_URL/static/js/cart.js'></script>";
 
 // Start capturing content
 ob_start();

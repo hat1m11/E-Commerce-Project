@@ -1,32 +1,10 @@
+console.log("cart.js is loaded!");
+
 document.addEventListener("DOMContentLoaded", () => {
 
-    // ----------------------------------
-    // BEAUTIFUL SUCCESS TOAST MESSAGE
-    // ----------------------------------
-    function showToast(message) {
-        const toast = document.createElement("div");
-        toast.className = "toast-message";
-        toast.innerHTML = `
-            <span class="toast-icon">✔</span>
-            <span>${message}</span>
-        `;
-
-        document.body.appendChild(toast);
-
-        // Show animation
-        setTimeout(() => toast.classList.add("show"), 10);
-
-        // Hide animation
-        setTimeout(() => {
-            toast.classList.remove("show");
-            setTimeout(() => toast.remove(), 300);
-        }, 2500);
-    }
-
-
-    // ----------------------------------
-    // ADD TO CART BUTTONS
-    // ----------------------------------
+    /* =====================================
+       ADD TO CART BUTTONS
+    ====================================== */
     const addButtons = document.querySelectorAll(".add-btn");
 
     addButtons.forEach(btn => {
@@ -46,9 +24,50 @@ document.addEventListener("DOMContentLoaded", () => {
             })
             .then(res => res.text())
             .then(() => {
-                showToast(`${name} was added to your cart successfully!`);
+
+                // Added message
+                const msg = document.createElement("p");
+                msg.textContent = `${name} was added to your cart!`;
+                msg.style.color = "green";
+                msg.style.fontWeight = "bold";
+                msg.style.marginTop = "10px";
+
+                document.body.appendChild(msg);
+
+                setTimeout(() => msg.remove(), 3000);
+
             })
             .catch(err => console.error("ADD ERROR:", err));
+        });
+    });
+
+
+
+    /* =====================================
+       REMOVE FROM CART BUTTONS
+    ====================================== */
+    const removeButtons = document.querySelectorAll(".remove-btn");
+
+    removeButtons.forEach(btn => {
+        btn.addEventListener("click", () => {
+            console.log("Remove button clicked!", btn.dataset.index);
+            
+            const index = btn.dataset.index;
+
+            const formData = new FormData();
+            formData.append("index", index);
+
+            fetch("remove_from_cart.php", {
+            method: "POST",
+            body: formData
+            })
+
+            .then(res => res.text())
+            .then(() => {
+                // Reload page to refresh cart visually
+                window.location.reload();
+            })
+            .catch(err => console.error("REMOVE ERROR:", err));
         });
     });
 

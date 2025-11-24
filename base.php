@@ -8,13 +8,18 @@
     <link rel="stylesheet" href="/E-Commerce-Project/static/css/base.css">
 
     <!-- PAGE-SPECIFIC CSS -->
-    <?php if (isset($extra_css)) echo $extra_css; ?>
+    <?php 
+        if (isset($extra_css)) {
+            echo $extra_css; 
+        }
+    ?>
 
     <title><?php echo isset($title) ? $title : "6ixe7ven"; ?></title>
 
     <!-- ICONS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
+
 <body>
 
     <!-- NAVBAR -->
