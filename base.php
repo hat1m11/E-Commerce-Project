@@ -4,8 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <?php include_once "config.php"; ?>
+
     <!-- GLOBAL CSS -->
-    <link rel="stylesheet" href="/E-Commerce-Project/static/css/base.css">
+    <link rel="stylesheet" href="<?= $BASE_URL ?>/static/css/base.css">
 
     <!-- PAGE-SPECIFIC CSS -->
     <?php 
@@ -14,7 +16,7 @@
         }
     ?>
 
-    <title><?php echo isset($title) ? $title : "6ixe7ven"; ?></title>
+    <title><?= isset($title) ? $title : "6ixe7ven"; ?></title>
 
     <!-- ICONS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -26,7 +28,8 @@
     <header class="navbar">
 
         <div class="logo-container">
-            <img src="/E-Commerce-Project/static/images/6ixe7venLogo.png" alt="6ixe7ven Logo" class="logo-img">
+            <img src="<?= $BASE_URL ?>/static/images/6ixe7venLogo.png" 
+                 alt="6ixe7ven Logo" class="logo-img">
             <span class="logo-text">6ixe7ven</span>
         </div>
 
@@ -48,10 +51,10 @@
         </div>
 
         <nav>
-            <a href="/E-Commerce-Project/index.php">Home</a>
-            <a href="/E-Commerce-Project/login.php">Login</a>
-            <a href="/E-Commerce-Project/cart.php">Cart</a>
-            <a class="contact-text" href="/E-Commerce-Project/contact.php">Contact Us</a>
+            <a href="<?= $BASE_URL ?>/index.php">Home</a>
+            <a href="<?= $BASE_URL ?>/login.php">Login</a>
+            <a href="<?= $BASE_URL ?>/cart.php">Cart</a>
+            <a class="contact-text" href="<?= $BASE_URL ?>/contact.php">Contact Us</a>
         </nav>
 
     </header>

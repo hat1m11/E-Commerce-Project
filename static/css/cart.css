@@ -1,86 +1,155 @@
-/* CART SECTION */
+/* ================================
+   CART — Modern Clean Design
+================================ */
+
+/* Wrapper */
 .cart-section {
-    max-width: 900px;
-    margin: 40px auto;
+    max-width: 1100px;
+    margin: 50px auto;
     padding: 0 20px;
+    font-family: 'Times New Roman', Times, serif;
 }
 
+/* Title */
 .cart-section h1 {
     text-align: center;
-    margin-bottom: 30px;
-    font-size: 30px;
+    font-size: 40px;
     color: #3d4f66;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
 }
 
-/* EMPTY CART MESSAGE */
+.cart-subtitle {
+    text-align: center;
+    font-size: 18px;
+    color: #5a6d8a;
+    margin-bottom: 40px;
+}
+
+/* Empty cart message */
 .empty-msg {
     text-align: center;
     font-size: 18px;
-    margin-top: 40px;
-    color: #666;
+    color: #5a6d8a;
+    margin-top: 50px;
 }
 
-
-/* CART ITEM BOX */
+/* ================================
+   CART ITEM CARD
+================================ */
 .cart-item {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    gap: 25px;
     background: #ffffff;
-    padding: 15px;
+    padding: 25px;
     border-radius: 12px;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
     border: 1px solid #d6dde6;
-    box-shadow: 0 3px 8px rgba(74, 93, 122, 0.12);
+    box-shadow: 0 4px 14px rgba(74, 93, 122, 0.15);
+    transition: transform .25s ease;
 }
 
-/* PRODUCT IMAGE */
+.cart-item:hover {
+    transform: translateY(-4px);
+}
+
+/* Fade-out animation on delete */
+.cart-item.removing {
+    opacity: 0;
+    transform: translateX(-25px);
+    transition: opacity .4s ease, transform .4s ease;
+}
+
+/* Product Image */
 .cart-item img {
-    width: 100px;
-    height: 100px;
+    width: 110px;
+    height: 110px;
     object-fit: contain;
     background: #f7f7f7;
-    padding: 8px;
+    padding: 10px;
     border-radius: 10px;
+    border: 1px solid #e3e8ef;
 }
 
-/* PRODUCT INFO */
+/* ================================
+   PRODUCT INFORMATION
+================================ */
 .item-info {
     flex: 1;
-    margin-left: 20px;
 }
 
 .item-info h3 {
     margin: 0;
-    font-size: 20px;
+    font-size: 22px;
     color: #3d4f66;
+    letter-spacing: .5px;
 }
 
 .price {
-    margin-top: 5px;
-    font-size: 18px;
+    font-size: 19px;
     font-weight: bold;
     color: #4a5d7a;
+    margin-top: 6px;
 }
 
-/* REMOVE BUTTON */
-.remove-btn {
+/* ================================
+   QUANTITY CONTROLS
+================================ */
+.qty-control {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 12px;
+}
+
+.qty-btn {
+    width: 32px;
+    height: 32px;
+    border: none;
+    background-color: #4a5d7a;
+    color: white;
+    font-size: 18px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background .2s ease, transform .2s ease;
+}
+
+.qty-btn:hover {
+    background-color: #2a3d5a;
+    transform: translateY(-2px);
+}
+
+.qty-number {
+    font-size: 18px;
+    font-weight: bold;
+    min-width: 22px;
+    text-align: center;
+    color: #3d4f66;
+}
+
+/* ================================
+   REMOVE BUTTON
+================================ */
+.remove-item {
+    padding: 10px 16px;
     background-color: #e65050;
     color: white;
     border: none;
-    padding: 10px 16px;
     border-radius: 8px;
     font-size: 14px;
     cursor: pointer;
-    transition: 0.3s ease;
+    transition: background .3s ease, transform .3s ease;
 }
 
-.remove-btn:hover {
+.remove-item:hover {
     background-color: #cc3e3e;
-    transform: scale(1.05);
+    transform: translateY(-2px);
 }
 
-/* LINE */
+/* ================================
+   SEPARATORS
+================================ */
 hr {
     border: none;
     height: 1px;
@@ -88,9 +157,25 @@ hr {
     margin: 20px 0;
 }
 
+/* ================================
+   TOTAL PRICE BOX
+================================ */
+.cart-total {
+    background: #ffffff;
+    padding: 25px;
+    margin-top: 40px;
+    border-radius: 12px;
+    border: 1px solid #d6dde6;
+    box-shadow: 0 4px 14px rgba(74, 93, 122, 0.15);
+    font-size: 26px;
+    text-align: center;
+    color: #3d4f66;
+}
 
-/* MOBILE RESPONSIVE */
-@media (max-width: 600px) {
+/* ================================
+   RESPONSIVE
+================================ */
+@media (max-width: 768px) {
     .cart-item {
         flex-direction: column;
         text-align: center;
@@ -100,12 +185,15 @@ hr {
         margin: 10px 0;
     }
 
-    .cart-item img {
-        width: 80px;
-        height: 80px;
+    .contact-title {
+        font-size: 34px;
     }
 
-    .remove-btn {
+    .qty-control {
+        justify-content: center;
+    }
+
+    .remove-item {
         width: 100%;
         margin-top: 10px;
     }

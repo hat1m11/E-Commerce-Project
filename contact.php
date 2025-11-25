@@ -1,9 +1,11 @@
 <?php
+include "config.php";
+
 // PAGE TITLE
 $title = "Contact Us - 6ixe7ven";
 
-// PAGE-SPECIFIC CSS
-$extra_css = '<link rel="stylesheet" href="static/css/contact.css">';
+// PAGE-SPECIFIC CSS  (fixed)
+$extra_css = "<link rel='stylesheet' href='$BASE_URL/static/css/contact.css'>";
 
 // Start capturing the content block
 ob_start();
