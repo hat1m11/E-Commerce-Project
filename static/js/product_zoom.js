@@ -1,40 +1,22 @@
-// Select elements
-const modal = document.getElementById("zoomModal");
-const modalImg = document.getElementById("zoomImage");
-const mainImg = document.getElementById("main-product-image");
-const closeBtn = document.querySelector(".zoom-close");
+document.addEventListener("DOMContentLoaded", () => {
+    const modal = document.getElementById("zoomModal");
+    const zoomImg = document.getElementById("zoomImage");
+    const closeBtn = document.querySelector(".close-zoom");
 
-// Open fullscreen zoom modal
-mainImg.onclick = function () {
-    modal.style.display = "block";
-    modalImg.src = this.src;
-};
-
-// Close by X button
-closeBtn.onclick = function () {
-    modal.style.display = "none";
-};
-
-// Close by clicking outside the image
-modal.onclick = function (event) {
-    if (event.target === modal) {
-        modal.style.display = "none";
-    }
-};
-
-document.querySelectorAll('.product-card img').forEach(img => {
-    img.addEventListener('click', () => {
-        document.getElementById('zoomImage').src = img.src;
-        document.getElementById('zoomModal').style.display = 'flex';
+    document.querySelectorAll(".zoom-trigger").forEach(img => {
+        img.addEventListener("click", () => {
+            zoomImg.src = img.dataset.full;
+            modal.style.display = "flex";
+        });
     });
-});
 
-document.getElementById('zoomClose').addEventListener('click', () => {
-    document.getElementById('zoomModal').style.display = 'none';
-});
+    closeBtn.addEventListener("click", () => {
+        modal.style.display = "none";
+    });
 
-document.getElementById('zoomModal').addEventListener('click', (e) => {
-    if (e.target.id === 'zoomModal') {
-        document.getElementById('zoomModal').style.display = 'none';
-    }
+    modal.addEventListener("click", e => {
+        if (e.target === modal) {
+            modal.style.display = "none";
+        }
+    });
 });

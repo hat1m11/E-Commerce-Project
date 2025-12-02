@@ -8,48 +8,16 @@ if (session_status() === PHP_SESSION_NONE) {
 
 $title = "Home - 6ixe7ven";
 
-$extra_css = '<link rel="stylesheet" href="/E-Commerce-Project/static/css/index.css">';
+$extra_css = '
+<link rel="stylesheet" href="/E-Commerce-Project/static/css/index.css">
+<link rel="stylesheet" href="/E-Commerce-Project/static/css/product_details.css">
+';
 
-$extra_js = <<<EOT
+$extra_js = '
 <script src="/E-Commerce-Project/static/js/bannerSlide.js"></script>
 <script src="/E-Commerce-Project/static/js/cart.js"></script>
-
-<script>
-document.addEventListener("DOMContentLoaded", function() {
-    // Open zoom modal when clicking a product image
-    var imgs = document.querySelectorAll(".product-card img");
-    imgs.forEach(function(img) {
-        img.addEventListener("click", function() {
-            var zoomImage = document.getElementById("zoomImage");
-            var zoomModal = document.getElementById("zoomModal");
-            if (zoomImage && zoomModal) {
-                zoomImage.src = img.src;
-                zoomModal.style.display = "flex";
-            }
-        });
-    });
-
-    // Close button
-    var zoomClose = document.getElementById("zoomClose");
-    if (zoomClose) {
-        zoomClose.addEventListener("click", function() {
-            var zoomModal = document.getElementById("zoomModal");
-            if (zoomModal) zoomModal.style.display = "none";
-        });
-    }
-
-    // Close by clicking on overlay
-    var zoomModalElem = document.getElementById("zoomModal");
-    if (zoomModalElem) {
-        zoomModalElem.addEventListener("click", function(e) {
-            if (e.target && e.target.id === "zoomModal") {
-                zoomModalElem.style.display = "none";
-            }
-        });
-    }
-});
-</script>
-EOT;
+<script src="/E-Commerce-Project/static/js/product_zoom.js"></script>
+';
 
 ob_start();
 ?>
@@ -72,14 +40,18 @@ ob_start();
 </section>
 
 <section class="product-section">
-    <h2 class="section-title">Featured Hoodies</h2>
+    <h2 class="section-title">Featured Products</h2>
 
     <div class="product-grid">
 
         <div class="product-card">
-            <img src="/E-Commerce-Project/static/images/hoodie1.jpeg" alt="6ixe7ven Hoodie 1">
+            <img class="zoom-trigger"
+                 src="/E-Commerce-Project/static/images/hoodie1.jpeg"
+                 data-full="/E-Commerce-Project/static/images/hoodie1.jpeg">
+
             <h3>6ixe7ven Hoodie 1</h3>
             <p class="price">£39.99</p>
+
             <button class="add-btn"
                 data-id="hoodie1"
                 data-name="6ixe7ven Hoodie 1"
@@ -90,9 +62,13 @@ ob_start();
         </div>
 
         <div class="product-card">
-            <img src="/E-Commerce-Project/static/images/hoodie2.jpeg" alt="6ixe7ven Hoodie 2">
+            <img class="zoom-trigger"
+                 src="/E-Commerce-Project/static/images/hoodie2.jpeg"
+                 data-full="/E-Commerce-Project/static/images/hoodie2.jpeg">
+
             <h3>6ixe7ven Hoodie 2</h3>
             <p class="price">£39.99</p>
+
             <button class="add-btn"
                 data-id="hoodie2"
                 data-name="6ixe7ven Hoodie 2"
@@ -103,9 +79,13 @@ ob_start();
         </div>
 
         <div class="product-card">
-            <img src="/E-Commerce-Project/static/images/hoodie3.jpeg" alt="6ixe7ven Hoodie 3">
+            <img class="zoom-trigger"
+                 src="/E-Commerce-Project/static/images/hoodie3.jpeg"
+                 data-full="/E-Commerce-Project/static/images/hoodie3.jpeg">
+
             <h3>6ixe7ven Hoodie 3</h3>
             <p class="price">£49.99</p>
+
             <button class="add-btn"
                 data-id="hoodie3"
                 data-name="6ixe7ven Hoodie 3"
@@ -118,10 +98,10 @@ ob_start();
     </div>
 </section>
 
-<!-- 🔍 Product Zoom Modal -->
-<div id="zoomModal">
-    <span id="zoomClose">&times;</span>
-    <img id="zoomImage" src="" alt="Zoomed product">
+<!-- UNIVERSAL ZOOM MODAL -->
+<div id="zoomModal" class="zoom-modal">
+    <span class="close-zoom">&times;</span>
+    <img id="zoomImage" class="zoom-modal-content">
 </div>
 
 <?php
