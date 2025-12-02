@@ -254,3 +254,60 @@
         font-size: 12px;
     }
 }
+
+/* ----------------------------------------
+   PRODUCT IMAGE ZOOM POPUP
+----------------------------------------- */
+
+/* Dark overlay behind the zoomed image */
+#zoomModal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn 0.3s ease;
+}
+
+/* Zoomed image container */
+#zoomModal img {
+    max-width: 85%;
+    max-height: 85%;
+    border-radius: 10px;
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0.4);
+    animation: zoomIn 0.25s ease;
+}
+
+/* Close (X) button */
+#zoomClose {
+    position: absolute;
+    top: 25px;
+    right: 35px;
+    font-size: 40px;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+    user-select: none;
+    transition: 0.2s ease;
+}
+
+#zoomClose:hover {
+    color: #dcdcdc;
+    transform: scale(1.1);
+}
+
+/* Fade & zoom animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes zoomIn {
+    from { transform: scale(0.7); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}

@@ -10,10 +10,46 @@ $title = "Home - 6ixe7ven";
 
 $extra_css = '<link rel="stylesheet" href="/E-Commerce-Project/static/css/index.css">';
 
-$extra_js = '
+$extra_js = <<<EOT
 <script src="/E-Commerce-Project/static/js/bannerSlide.js"></script>
 <script src="/E-Commerce-Project/static/js/cart.js"></script>
-';
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    // Open zoom modal when clicking a product image
+    var imgs = document.querySelectorAll(".product-card img");
+    imgs.forEach(function(img) {
+        img.addEventListener("click", function() {
+            var zoomImage = document.getElementById("zoomImage");
+            var zoomModal = document.getElementById("zoomModal");
+            if (zoomImage && zoomModal) {
+                zoomImage.src = img.src;
+                zoomModal.style.display = "flex";
+            }
+        });
+    });
+
+    // Close button
+    var zoomClose = document.getElementById("zoomClose");
+    if (zoomClose) {
+        zoomClose.addEventListener("click", function() {
+            var zoomModal = document.getElementById("zoomModal");
+            if (zoomModal) zoomModal.style.display = "none";
+        });
+    }
+
+    // Close by clicking on overlay
+    var zoomModalElem = document.getElementById("zoomModal");
+    if (zoomModalElem) {
+        zoomModalElem.addEventListener("click", function(e) {
+            if (e.target && e.target.id === "zoomModal") {
+                zoomModalElem.style.display = "none";
+            }
+        });
+    }
+});
+</script>
+EOT;
 
 ob_start();
 ?>
@@ -41,7 +77,7 @@ ob_start();
     <div class="product-grid">
 
         <div class="product-card">
-            <img src="/E-Commerce-Project/static/images/hoodie1.jpeg">
+            <img src="/E-Commerce-Project/static/images/hoodie1.jpeg" alt="6ixe7ven Hoodie 1">
             <h3>6ixe7ven Hoodie 1</h3>
             <p class="price">£39.99</p>
             <button class="add-btn"
@@ -54,7 +90,7 @@ ob_start();
         </div>
 
         <div class="product-card">
-            <img src="/E-Commerce-Project/static/images/hoodie2.jpeg">
+            <img src="/E-Commerce-Project/static/images/hoodie2.jpeg" alt="6ixe7ven Hoodie 2">
             <h3>6ixe7ven Hoodie 2</h3>
             <p class="price">£39.99</p>
             <button class="add-btn"
@@ -67,13 +103,13 @@ ob_start();
         </div>
 
         <div class="product-card">
-            <img src="/E-Commerce-Project/static/images/hoodie3.jpeg">
+            <img src="/E-Commerce-Project/static/images/hoodie3.jpeg" alt="6ixe7ven Hoodie 3">
             <h3>6ixe7ven Hoodie 3</h3>
-            <p class="price">£39.99</p>
+            <p class="price">£49.99</p>
             <button class="add-btn"
                 data-id="hoodie3"
                 data-name="6ixe7ven Hoodie 3"
-                data-price="39.99"
+                data-price="49.99"
                 data-image="/E-Commerce-Project/static/images/hoodie3.jpeg">
                 Add to Cart
             </button>
@@ -81,6 +117,12 @@ ob_start();
 
     </div>
 </section>
+
+<!-- 🔍 Product Zoom Modal -->
+<div id="zoomModal">
+    <span id="zoomClose">&times;</span>
+    <img id="zoomImage" src="" alt="Zoomed product">
+</div>
 
 <?php
 $content = ob_get_clean();
