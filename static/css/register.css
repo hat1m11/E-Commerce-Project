@@ -1,15 +1,15 @@
-/* --- Wrapper to centre everything vertically + horizontally --- */
+/* Wrapper for centering the page */
 .register-wrapper {
     max-width: 1000px;
-    margin: 60px auto;     /* centres horizontally */
+    margin: 60px auto;
     margin-top: 20px;
     padding: 0 20px;
     display: flex;
     flex-direction: column;
-    align-items: center;   /* centres content */
+    align-items: center;
 }
 
-/* --- Page Title --- */
+/* Page title */
 .register-title {
     font-size: 40px;
     color: #3d4f66;
@@ -19,14 +19,14 @@
     font-weight: normal;
 }
 
-/* --- Container to centre the card --- */
+/* Center form container */
 .register-container {
     width: 90%;
     display: flex;
-    justify-content: center;   /* centres horizontally */
+    justify-content: center;
 }
 
-/* --- The form card --- */
+/* Signup form card */
 .form-section {
     width: 100%;
     max-width: 550px;
@@ -37,7 +37,7 @@
     border: 1px solid #e0e6ef;
 }
 
-/* --- Labels --- */
+/* Form labels */
 .form-section label {
     display: block;
     font-size: 15px;
@@ -47,7 +47,7 @@
     margin-bottom: 5px;
 }
 
-/* --- Inputs --- */
+/* Input styling */
 .form-section input {
     width: 100%;
     padding: 12px;
@@ -63,7 +63,7 @@
     outline: none;
 }
 
-/* --- Sign Up Button --- */
+/* Signup button */
 .signup-button {
     width: 100%;
     padding: 14px;
@@ -84,7 +84,7 @@
     transform: translateY(-2px);
 }
 
-/* --- Already have an account? --- */
+/* Login link text */
 .login-text {
     text-align: center;
     margin-top: 15px;
@@ -101,7 +101,7 @@
     color: #2a3d5a;
 }
 
-/* --- Error Message Styling --- */
+/* Error message */
 .error-msg {
     color: red;
     font-size: 13px;
@@ -109,7 +109,7 @@
     display: block;
 }
 
-/* --- Input Error Styling --- */
+/* Input error highlight */
 .input-error {
     border-color: red !important;
     box-shadow: 0 0 6px rgba(255, 0, 0, 0.3);
