@@ -1,62 +1,99 @@
 <?php
+session_start();
+include "connection.php"; // DB connection
+
 $title = "Sign Up - 6ixe7ven";
 
-// FIXED CSS PATH (remove leading slash)
-$extra_css = '<link rel="stylesheet" href="static/css/register.css">';
+// Page styling/scripts
+$extra_css = '<link rel="stylesheet" href="css/register.css">';
+$extra_js  = '<script src="js/register.js"></script>';
 
-// JS path was already correct
-$extra_js  = '<script src="static/js/register.js"></script>';
+$error = '';
+$success = '';
 
-ob_start();
+// Form submitted
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+
+    // Get inputs
+    $fullname = trim($_POST['fullname'] ?? '');
+    $address  = trim($_POST['address'] ?? '');
+    $phone    = trim($_POST['phone'] ?? '');
+    $email    = trim($_POST['email'] ?? '');
+    $username = trim($_POST['username'] ?? '');
+    $password = trim($_POST['password'] ?? '');
+    $confirm  = trim($_POST['confirm-password'] ?? '');
+
+    // Basic checks
+    if (empty($fullname) || empty($email) || empty($username) || empty($password) || empty($confirm)) {
+        $error = "Please fill in all required fields.";
+    } elseif ($password !== $confirm) {
+        $error = "Passwords do not match.";
+    } else {
+
+        // Check if taken
+        $stmt = $conn->prepare("SELECT * FROM users WHERE username=? OR email=?");
+        $stmt->bind_param("ss", $username, $email);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        if ($result->num_rows > 0) {
+            $error = "Username or email already exists.";
+        } else {
+
+            // Save new user
+            $password_hash = password_hash($password, PASSWORD_DEFAULT);
+
+            $stmt = $conn->prepare("
+                INSERT INTO users (full_name, address, phone, email, username, password, created_at)
+                VALUES (?, ?, ?, ?, ?, ?, NOW())
+            ");
+            $stmt->bind_param("ssssss", $fullname, $address, $phone, $email, $username, $password_hash);
+
+            if ($stmt->execute()) {
+                $success = "Account created successfully! You can now <a href='login.php'>login</a>.";
+            } else {
+                $error = "Database error: " . $stmt->error;
+            }
+        }
+    }
+}
+
+ob_start(); // Capture page
 ?>
 
 <main class="register-wrapper">
-
     <h2 class="register-title">Sign Up</h2>
+
+    <?php if ($error): ?>
+        <p class="error-msg"><?= $error ?></p>
+    <?php elseif ($success): ?>
+        <p class="success-msg"><?= $success ?></p>
+    <?php endif; ?>
 
     <div class="register-container">
         <section class="form-section">
 
-            <form>
+            <form action="register.php" method="POST" class="register-form">
 
-                <label for="fullname">Full Name</label>
-                <input type="text" id="fullname" name="fullname" placeholder="Enter your full name">
-                <small class="error-msg" id="fullname-error"></small>
-
-                <label for="address">Address</label>
-                <input type="text" id="address" name="address" placeholder="Enter your address">
-                <small class="error-msg" id="address-error"></small>
-
-                <label for="phone">Phone Number</label>
-                <input type="text" id="phone" name="phone" placeholder="Enter your phone number">
-                <small class="error-msg" id="phone-error"></small>
-
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email" placeholder="Enter your email address">
-                <small class="error-msg" id="email-error"></small>
-
-                <label for="password">Password</label>
-                <input type="password" id="password" name="password" placeholder="Create a password">
-                <small class="error-msg" id="password-error"></small>
-
-                <label for="confirm-password">Confirm Password</label>
-                <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirm your password">
-                <small class="error-msg" id="confirm-password-error"></small>
+                <input type="text" name="fullname" placeholder="Full Name" required>
+                <input type="text" name="address" placeholder="Address">
+                <input type="text" name="phone" placeholder="Phone">
+                <input type="email" name="email" placeholder="Email" required>
+                <input type="text" name="username" placeholder="Username" required>
+                <input type="password" name="password" placeholder="Password" required>
+                <input type="password" name="confirm-password" placeholder="Confirm Password" required>
 
                 <button type="submit" class="signup-button">Sign Up</button>
-
-                <p class="login-text">
-                    Already have an account? <a href="login.php">Log in here</a>.
-                </p>
-
             </form>
-
         </section>
     </div>
 
+    <p class="login-text">
+        Already have an account? <a href="login.php">Log in here</a>.
+    </p>
 </main>
 
 <?php
-$content = ob_get_clean();
+$content = ob_get_clean(); // Final page output
 include "base.php";
 ?>

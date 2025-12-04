@@ -1,16 +1,22 @@
 <?php
 session_start();
 
-file_put_contents("debug.txt", "Request received: " . json_encode($_POST));
+// Only run when a valid POST request is sent
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['index'])) {
+    $index = intval($_POST['index']);
 
-if (isset($_POST["index"])) {
-    $index = (int) $_POST["index"];
-
-    if (isset($_SESSION["cart"][$index])) {
-        unset($_SESSION["cart"][$index]);
-        $_SESSION["cart"] = array_values($_SESSION["cart"]); // reindex array
+    // Remove item if it exists
+    if (isset($_SESSION['cart'][$index])) {
+        unset($_SESSION['cart'][$index]);
+        $_SESSION['cart'] = array_values($_SESSION['cart']); // tidy up indexes
     }
+
+    echo "OK";
+    exit;
 }
 
-echo "OK";
+// Bad request
+http_response_code(400);
+echo "ERROR";
+exit;
 ?>

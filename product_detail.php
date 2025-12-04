@@ -1,40 +1,40 @@
 <?php
-$title = "Product Details - 6ixe7ven";
-$extra_css = '<link rel="stylesheet" href="/E-Commerce-Project/static/css/product_details.css">';
-$extra_js  = '<script src="/E-Commerce-Project/static/js/product_zoom.js"></script>';
+$title = "Product Details - 6ixe7ven"; // page title
 
-$product = $_GET['product'] ?? null;
+$extra_css = '<link rel="stylesheet" href="css/product_details.css">'; // css file
+$extra_js  = '<script src="js/product_zoom.js"></script>'; // zoom script
 
-// Mock product data (later you can pull this from MySQL)
+$product = $_GET['product'] ?? null; // get product key
+
 $products = [
     "hoodie1" => [
         "name" => "6ixe7ven Hoodie 1",
         "price" => "39.99",
-        "image" => "/E-Commerce-Project/static/images/hoodie1.jpeg",
+        "image" => "images/hoodie1.jpeg",
         "description" => "Premium cotton hoodie with modern fit."
     ],
     "hoodie2" => [
         "name" => "6ixe7ven Hoodie 2",
         "price" => "39.99",
-        "image" => "/E-Commerce-Project/static/images/hoodie2.jpeg",
+        "image" => "images/hoodie2.jpeg",
         "description" => "Soft fleece-lined hoodie, perfect for cold days."
     ],
     "hoodie3" => [
         "name" => "6ixe7ven Hoodie 3",
         "price" => "49.99",
-        "image" => "/E-Commerce-Project/static/images/hoodie3.jpeg",
+        "image" => "images/hoodie3.jpeg",
         "description" => "Limited edition hoodie with luxury fabric."
     ]
 ];
 
-// If the product doesn't exist → show 404
+// simple 404 check
 if (!$product || !isset($products[$product])) {
     die("Product not found.");
 }
 
-$p = $products[$product];
+$p = $products[$product]; // selected product
 
-ob_start();
+ob_start(); // start content
 ?>
 
 <div class="product-wrapper">
@@ -63,13 +63,13 @@ ob_start();
     </div>
 </div>
 
-<!-- ZOOM MODAL -->
+<!-- zoom modal -->
 <div id="zoomModal" class="zoom-modal">
     <span class="zoom-close">&times;</span>
     <img class="zoom-modal-content" id="zoomImage">
 </div>
 
 <?php
-$content = ob_get_clean();
-include "base.php";
+$content = ob_get_clean(); // grab content
+include "base.php"; // load layout
 ?>

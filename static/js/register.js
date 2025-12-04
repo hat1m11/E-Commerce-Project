@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const form = document.getElementById("registerForm");
 
-    // Helper function to show an error
+    // Show an error message
     function showError(inputId, message) {
         const input = document.getElementById(inputId);
         const errorMsg = document.getElementById(inputId + "-error");
@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
         errorMsg.textContent = message;
     }
 
-    // Helper function to clear an error
+    // Clear an error message
     function clearError(inputId) {
         const input = document.getElementById(inputId);
         const errorMsg = document.getElementById(inputId + "-error");
@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
         errorMsg.textContent = "";
     }
 
-    // Live validation function
+    // Validate as user types
     function validateField(inputId, validator) {
         const input = document.getElementById(inputId);
         input.addEventListener("input", () => {
@@ -30,61 +30,49 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // ---------- VALIDATION RULES ----------
-
-    // Full Name (max 20 chars)
     validateField("fullname", (value) => {
         if (value.length === 0) return "Full name is required.";
         if (value.length > 40) return "Full name cannot exceed 40 characters.";
         return "";
     });
 
-    // Address
     validateField("address", (value) => {
         if (value.length === 0) return "Address is required.";
         if (value.length > 30) return "Address cannot exceed 30 characters.";
         return "";
     });
 
-    // Phone Number
     validateField("phone", (value) => {
         const phoneRegex = /^(\+\d{1,3}[- ]?)?\d{7,12}$/;
-        if (!phoneRegex.test(value)) {
-            return "Enter a valid phone number (e.g. +44 7123456789).";
-        }
+        if (!phoneRegex.test(value)) return "Enter a valid phone number.";
         return "";
     });
 
-    // Email
     validateField("email", (value) => {
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!emailRegex.test(value)) {
-            return "Enter a valid email address.";
-        }
+        if (!emailRegex.test(value)) return "Enter a valid email address.";
         return "";
     });
 
-    // Password
     validateField("password", (value) => {
         if (value.length < 6) return "Password must be at least 6 characters.";
         return "";
     });
 
-    // Confirm Password
     validateField("confirm-password", (value) => {
         const password = document.getElementById("password").value;
         if (value !== password) return "Passwords do not match.";
         return "";
     });
 
-    // Final validation before submitting
+    // Check everything before submit
     form.addEventListener("submit", (e) => {
         const inputs = ["fullname", "address", "phone", "email", "password", "confirm-password"];
         let stopSubmit = false;
 
         inputs.forEach((id) => {
             const input = document.getElementById(id);
-            input.dispatchEvent(new Event("input")); // force check
+            input.dispatchEvent(new Event("input")); // force validation
 
             if (document.getElementById(id + "-error").textContent !== "") {
                 stopSubmit = true;
@@ -93,7 +81,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if (stopSubmit) {
             e.preventDefault();
-            alert("Please fix the highlighted errors before submitting.");
+            alert("Please fix errors before submitting.");
         }
     });
 
