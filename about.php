@@ -1,11 +1,11 @@
 <?php
-// PAGE TITLE
+// Page title
 $title = "Home - 6ixe7ven";
 
-// PAGE-SPECIFIC CSS (optional for hero section)
+// Extra CSS for this page
 $extra_css = '<link rel="stylesheet" href="static/css/index.css">';
 
-// START CAPTURING PAGE CONTENT
+// Start capturing page content
 ob_start();
 ?>
 
@@ -16,9 +16,9 @@ ob_start();
 </section>
 
 <?php
-// END CAPTURE
+// Grab the buffered content
 $content = ob_get_clean();
 
-// INCLUDE BASE TEMPLATE
+// Load the base template
 include "base.php";
 ?>

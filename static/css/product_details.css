@@ -1,10 +1,11 @@
-/* PAGE LAYOUT */
+/* Page layout */
 .product-wrapper {
     display: flex;
     gap: 40px;
     padding: 50px;
 }
 
+/* Main product image */
 .product-image img {
     width: 400px;
     height: auto;
@@ -13,44 +14,49 @@
     transition: transform 0.2s ease;
 }
 
-/* Hover zoom preview */
+/* Hover zoom */
 .zoomable:hover {
     transform: scale(1.05);
 }
 
-/* PRODUCT INFO */
+/* Product details */
 .product-info {
     max-width: 500px;
 }
 
+/* Title */
 .product-title {
     font-size: 2rem;
     margin-bottom: 10px;
 }
 
+/* Price */
 .product-price {
     font-size: 1.5rem;
     font-weight: bold;
     color: #222;
 }
 
+/* Description */
 .product-description {
     margin-top: 10px;
     margin-bottom: 20px;
     color: #555;
 }
 
+/* Size label */
 .size-label {
     display: block;
     margin-top: 20px;
 }
 
+/* Size dropdown */
 .size-select {
     padding: 8px;
     margin-bottom: 20px;
 }
 
-/* ADD TO CART BUTTON */
+/* Add to cart button */
 .add-cart-btn {
     padding: 12px 25px;
     background: black;
@@ -64,7 +70,7 @@
     background: #444;
 }
 
-/* FULLSCREEN MODAL */
+/* Fullscreen zoom overlay */
 .zoom-modal {
     display: none;
     position: fixed;
@@ -77,6 +83,7 @@
     background: rgba(0,0,0,0.9);
 }
 
+/* Zoomed image */
 .zoom-modal-content {
     margin: auto;
     display: block;
@@ -86,6 +93,7 @@
     border-radius: 10px;
 }
 
+/* Close button */
 .zoom-close {
     position: absolute;
     top: 20px;

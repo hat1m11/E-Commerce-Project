@@ -1,0 +1,129 @@
+/* Checkout container */
+.checkout-section {
+    max-width: 900px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fafafa;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* Checkout title */
+.checkout-section h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #222;
+}
+
+/* Each checkout item row */
+.checkout-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 15px;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Product image */
+.checkout-item img {
+    width: 100px;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+/* Product name */
+.item-info h3 {
+    margin: 0 0 5px;
+    font-size: 18px;
+}
+
+/* Product details text */
+.item-info p {
+    margin: 3px 0;
+    font-size: 14px;
+    color: #555;
+}
+
+/* Checkout total section */
+.checkout-total {
+    text-align: right;
+    font-size: 20px;
+    font-weight: bold;
+    margin: 20px 0;
+    color: #222;
+}
+
+/* Buy button wrapper */
+.checkout-button {
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Buy now button */
+.buy-now-btn {
+    background-color: #007bff;
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Hover effect */
+.buy-now-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Empty cart message */
+.empty-msg {
+    text-align: center;
+    font-size: 18px;
+    color: #888;
+    margin: 30px 0;
+}
+
+/* Thank you page container */
+.thankyou-section {
+    max-width: 600px;
+    margin: 100px auto;
+    text-align: center;
+    background-color: #fefefe;
+    padding: 40px 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* Thank you title */
+.thankyou-section h1 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: #28a745;
+}
+
+/* Thank you text */
+.thankyou-section p {
+    font-size: 16px;
+    color: #555;
+    margin: 10px 0;
+}
+
+/* Back to home button */
+.btn-back-home {
+    display: inline-block;
+    margin-top: 25px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 10px 25px;
+    border-radius: 6px;
+    transition: background-color 0.3s ease;
+}
+
+/* Hover for home button */
+.btn-back-home:hover {
+    background-color: #0056b3;
+}

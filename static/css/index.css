@@ -1,6 +1,4 @@
-/* ----------------------------------------
-   BANNER SECTION
------------------------------------------ */
+/* Banner container */
 .banner {
     position: relative;
     width: 100%;
@@ -11,7 +9,7 @@
     box-shadow: 0 6px 16px rgba(74, 93, 122, 0.15);
 }
 
-/* Banner image rotation container */
+/* Rotating image area */
 .rotation {
     position: relative;
     width: 100%;
@@ -21,7 +19,7 @@
     background-color: #f5f5f5;
 }
 
-/* Images in rotation */
+/* Rotation images */
 .rotation-image {
     position: absolute;
     top: 0;
@@ -34,12 +32,13 @@
     pointer-events: none;
 }
 
+/* Active rotation image */
 .rotation-image.active {
     opacity: 1;
     pointer-events: auto;
 }
 
-/* Navigation arrows */
+/* Banner arrows */
 .banner-arrow {
     position: absolute;
     top: 50%;
@@ -102,16 +101,14 @@
     transform: scale(1.3);
 }
 
-
-/* ----------------------------------------
-   Product card STYLING
------------------------------------------ */
+/* Product section wrapper */
 .product-section {
     max-width: 1200px;
     margin: 40px auto;
     padding: 0 20px;
 }
 
+/* Section title */
 .section-title {
     font-size: 28px;
     text-align: center;
@@ -119,14 +116,14 @@
     color: #3d4f66;
 }
 
-/* GRID */
+/* Product grid */
 .product-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 25px;
 }
 
-/* CARD */
+/* Product card */
 .product-card {
     background: white;
     border: 1px solid #e0e4ea;
@@ -141,24 +138,24 @@
     transform: translateY(-5px);
 }
 
-/* IMAGE */
+/* Product image */
 .product-card img {
     width: 100%;
-    height: 220px;        
-    object-fit: contain;  
-    padding: 10px;        
-    background: #fff;     
+    height: 220px;
+    object-fit: contain;
+    padding: 10px;
+    background: #fff;
     border-radius: 8px;
 }
 
-
-/* PRICE and BUTTON */
+/* Price text */
 .price {
     font-size: 18px;
     font-weight: bold;
     margin: 8px 0;
 }
 
+/* Add to cart button */
 .add-btn {
     background: #4a5d7a;
     color: white;
@@ -173,11 +170,7 @@
     background: #3c4c62;
 }
 
-
-
-/* ----------------------------------------
-   PAGINATION STYLING
------------------------------------------ */
+/* Pagination container */
 .pagination {
     display: flex;
     justify-content: center;
@@ -185,6 +178,7 @@
     margin: 40px 0 60px 0;
 }
 
+/* Pagination buttons */
 .pagination .page {
     padding: 10px 18px;
     background-color: white;
@@ -210,10 +204,7 @@
     box-shadow: 0 4px 10px rgba(74, 93, 122, 0.2);
 }
 
-
-/* ----------------------------------------
-   MOBILE RESPONSIVE
------------------------------------------ */
+/* Mobile styles */
 @media (max-width: 768px) {
     .banner {
         margin: 15px;
@@ -255,13 +246,9 @@
     }
 }
 
-/* ----------------------------------------
-   PRODUCT IMAGE ZOOM POPUP
------------------------------------------ */
-
-/* Dark overlay behind the zoomed image */
+/* Zoom modal overlay */
 #zoomModal {
-    display: none; /* Hidden by default */
+    display: none;
     position: fixed;
     z-index: 9999;
     left: 0;
@@ -274,7 +261,7 @@
     animation: fadeIn 0.3s ease;
 }
 
-/* Zoomed image container */
+/* Zoomed image */
 #zoomModal img {
     max-width: 85%;
     max-height: 85%;
@@ -283,7 +270,7 @@
     animation: zoomIn 0.25s ease;
 }
 
-/* Close (X) button */
+/* Close button */
 #zoomClose {
     position: absolute;
     top: 25px;
@@ -301,7 +288,7 @@
     transform: scale(1.1);
 }
 
-/* Fade & zoom animations */
+/* Modal animations */
 @keyframes fadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
