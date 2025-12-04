@@ -1,9 +1,4 @@
 <?php
-if (strpos($_SERVER['HTTP_HOST'], 'localhost') !== false) {
-    // On XAMPP
-    $BASE_URL = "/E-Commerce-Project";
-} else {
-    // On Virtualmin (public_html IS the root)
-    $BASE_URL = "";
-}
+// Base URL for the whole site.
+$BASE_URL = "https://cs2team67.cs2410-web01pvm.aston.ac.uk";
 ?>
