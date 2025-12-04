@@ -1,9 +1,11 @@
 <?php
+include "config.php";
+
 // PAGE TITLE
 $title = "Login - 6ixe7ven";
 
-// PAGE-SPECIFIC CSS
-$extra_css = '<link rel="stylesheet" href="static/css/login.css">';
+// PAGE-SPECIFIC CSS (FIXED)
+$extra_css = "<link rel='stylesheet' href='$BASE_URL/static/css/login.css'>";
 
 // Start capturing the page content
 ob_start();
@@ -14,7 +16,9 @@ ob_start();
     <p>Please login to continue</p>
 
     <!-- REAL FORM -->
-    <form action="controllers/admin/adminAuthController.php" method="POST" class="login-form">
+    <form action="<?= $BASE_URL ?>/controllers/admin/adminAuthController.php" 
+          method="POST" 
+          class="login-form">
 
         <input type="text" 
                placeholder="Username" 
@@ -33,7 +37,7 @@ ob_start();
     </form>
 
     <div class="auth-options">
-        <a href="register.php" class="auth-btn">Register</a>
+        <a href="<?= $BASE_URL ?>/register.php" class="auth-btn">Register</a>
         <button class="auth-btn">Continue as Guest</button>
     </div>
 </main>
