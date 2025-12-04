@@ -5,8 +5,8 @@ include "connection.php"; // DB connection
 $title = "Sign Up - 6ixe7ven";
 
 // Page styling/scripts
-$extra_css = '<link rel="stylesheet" href="css/register.css">';
-$extra_js  = '<script src="js/register.js"></script>';
+$extra_css = '<link rel="stylesheet" href="static/css/register.css">';
+$extra_js  = '<script src="static/js/register.js"></script>';
 
 $error = '';
 $success = '';

@@ -12,7 +12,7 @@ if (!isset($_SESSION['user_id'])) {
 unset($_SESSION['cart']);
 
 $title = "Thank You - 6ixe7ven"; // page title
-$extra_css = "<link rel='stylesheet' href='css/checkout.css'>"; // page css
+$extra_css = "<link rel='stylesheet' href='static/css/checkout.css'>"; // page css
 
 ob_start(); // start page content
 ?>

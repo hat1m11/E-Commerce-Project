@@ -5,9 +5,9 @@ include "connection.php"; // connect to the database
 // Page title
 $title = "Your Cart - 6ixe7ven";
 
-// Page CSS + JS
-$extra_css = "<link rel='stylesheet' href='css/cart.css'>";
-$extra_js  = "<script src='js/cart_remove.js'></script>";
+// Page CSS + JS  (use an absolute-ish path so it always works)
+$extra_css = "<link rel='stylesheet' href='/E-Commerce-Project/static/css/cart.css'>";
+$extra_js  = "<script src='/E-Commerce-Project/static/js/cart_remove.js'></script>";
 
 // Start capturing page content
 ob_start();
@@ -37,7 +37,7 @@ ob_start();
         // Loop through cart items
         foreach ($cart as $index => $item): ?>
             <div class="cart-item" data-price="<?= htmlspecialchars($item['price']) ?>">
-                <img src="<?= htmlspecialchars($item['image']) ?>"
+                <img src="/E-Commerce-Project/<?= htmlspecialchars($item['image']) ?>"
                      alt="<?= htmlspecialchars($item['name']) ?>"
                      width="80">
 
@@ -76,9 +76,8 @@ ob_start();
         </div>
 
         <div class="checkout-button-container">
-            <form action="checkout.php" method="GET">
-                <button type="submit" class="buy-now-btn">Buy Now</button>
-            </form>
+            <!-- Use <a> instead of <button> to dodge browser button default styling -->
+            <a href="checkout.php" class="buy-now-btn">Buy Now</a>
         </div>
     <?php endif; ?>
 </section>

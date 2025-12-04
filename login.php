@@ -4,7 +4,7 @@ include "connection.php"; // db link
 
 $title = "Login - 6ixe7ven"; // page title
 
-$extra_css = '<link rel="stylesheet" href="css/login.css">'; // page css
+$extra_css = '<link rel="stylesheet" href="static/css/login.css">'; // page css
 
 // form check
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {

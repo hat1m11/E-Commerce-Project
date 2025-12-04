@@ -11,7 +11,7 @@ if (session_status() === PHP_SESSION_NONE) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Main site CSS -->
-    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="static/css/base.css">
 
     <!-- Extra CSS for specific pages -->
     <?php 
@@ -33,7 +33,7 @@ if (session_status() === PHP_SESSION_NONE) {
 
         <!-- Logo -->
         <div class="logo-container">
-            <img src="images/6ixe7venLogo.png" alt="6ixe7ven Logo" class="logo-img">
+            <img src="static/images/6ixe7venLogo.png" alt="6ixe7ven Logo" class="logo-img">
             <span class="logo-text">6ixe7ven</span>
         </div>
 
