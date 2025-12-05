@@ -1,8 +1,4 @@
-/* ================================
-   CART — Modern Clean Design
-================================ */
-
-/* Wrapper */
+/* Main cart layout */
 .cart-section {
     max-width: 1100px;
     margin: 50px auto;
@@ -10,7 +6,7 @@
     font-family: 'Times New Roman', Times, serif;
 }
 
-/* Title */
+/* Cart title */
 .cart-section h1 {
     text-align: center;
     font-size: 40px;
@@ -19,6 +15,7 @@
     letter-spacing: 1px;
 }
 
+/* Subtitle under title */
 .cart-subtitle {
     text-align: center;
     font-size: 18px;
@@ -26,7 +23,7 @@
     margin-bottom: 40px;
 }
 
-/* Empty cart message */
+/* Message when cart is empty */
 .empty-msg {
     text-align: center;
     font-size: 18px;
@@ -34,9 +31,7 @@
     margin-top: 50px;
 }
 
-/* ================================
-   CART ITEM CARD
-================================ */
+/* Each item container */
 .cart-item {
     display: flex;
     align-items: center;
@@ -50,18 +45,19 @@
     transition: transform .25s ease;
 }
 
+/* Hover lift effect */
 .cart-item:hover {
     transform: translateY(-4px);
 }
 
-/* Fade-out animation on delete */
+/* Animation when removing item */
 .cart-item.removing {
     opacity: 0;
     transform: translateX(-25px);
     transition: opacity .4s ease, transform .4s ease;
 }
 
-/* Product Image */
+/* Product image */
 .cart-item img {
     width: 110px;
     height: 110px;
@@ -72,13 +68,12 @@
     border: 1px solid #e3e8ef;
 }
 
-/* ================================
-   PRODUCT INFORMATION
-================================ */
+/* Item text/info */
 .item-info {
     flex: 1;
 }
 
+/* Item name */
 .item-info h3 {
     margin: 0;
     font-size: 22px;
@@ -86,6 +81,7 @@
     letter-spacing: .5px;
 }
 
+/* Price label */
 .price {
     font-size: 19px;
     font-weight: bold;
@@ -93,9 +89,7 @@
     margin-top: 6px;
 }
 
-/* ================================
-   QUANTITY CONTROLS
-================================ */
+/* Quantity section */
 .qty-control {
     display: flex;
     align-items: center;
@@ -103,6 +97,7 @@
     margin-top: 12px;
 }
 
+/* + / - buttons */
 .qty-btn {
     width: 32px;
     height: 32px;
@@ -115,11 +110,13 @@
     transition: background .2s ease, transform .2s ease;
 }
 
+/* Hover effect on qty buttons */
 .qty-btn:hover {
     background-color: #2a3d5a;
     transform: translateY(-2px);
 }
 
+/* Number between buttons */
 .qty-number {
     font-size: 18px;
     font-weight: bold;
@@ -128,9 +125,7 @@
     color: #3d4f66;
 }
 
-/* ================================
-   REMOVE BUTTON
-================================ */
+/* Remove item button */
 .remove-item {
     padding: 10px 16px;
     background-color: #e65050;
@@ -142,14 +137,13 @@
     transition: background .3s ease, transform .3s ease;
 }
 
+/* Hover effect for remove */
 .remove-item:hover {
     background-color: #cc3e3e;
     transform: translateY(-2px);
 }
 
-/* ================================
-   SEPARATORS
-================================ */
+/* Horizontal line */
 hr {
     border: none;
     height: 1px;
@@ -157,9 +151,7 @@ hr {
     margin: 20px 0;
 }
 
-/* ================================
-   TOTAL PRICE BOX
-================================ */
+/* Total price box */
 .cart-total {
     background: #ffffff;
     padding: 25px;
@@ -172,9 +164,30 @@ hr {
     color: #3d4f66;
 }
 
-/* ================================
-   RESPONSIVE
-================================ */
+/* Checkout button wrapper */
+.checkout-button-container {
+    text-align: center;
+    margin: 30px 0;
+}
+
+/* Buy now button */
+.buy-now-btn {
+    background-color: #007bff;
+    color: white;
+    padding: 12px 30px;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Hover effect for buy now */
+.buy-now-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Mobile tweaks */
 @media (max-width: 768px) {
     .cart-item {
         flex-direction: column;
@@ -183,10 +196,6 @@ hr {
 
     .item-info {
         margin: 10px 0;
-    }
-
-    .contact-title {
-        font-size: 34px;
     }
 
     .qty-control {

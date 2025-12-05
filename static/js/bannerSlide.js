@@ -1,52 +1,50 @@
-// Wait for page to fully load
+// Run when page loads
 document.addEventListener("DOMContentLoaded", function() {
-    // Get all banner images and indicator dots
+
+    // Get images, dots, and arrows
     const images = document.querySelectorAll(".rotation-image");
     const indicators = document.querySelectorAll(".banner-indicator");
     const prevBtn = document.querySelector(".banner-prev");
     const nextBtn = document.querySelector(".banner-next");
-    
-    // Exit if no images found (prevents errors on other pages)
+
+    // Stop if no images
     if (images.length === 0) return;
 
     let currentIndex = 0;
     let autoPlayInterval;
 
-    // Function to show a specific slide
+    // Show selected slide
     function showSlide(index) {
-        // Remove active class from current image and indicator
         images[currentIndex].classList.remove("active");
         indicators[currentIndex].classList.remove("active");
 
-        // Update index and add active class to new image and indicator
         currentIndex = index;
+
         images[currentIndex].classList.add("active");
         indicators[currentIndex].classList.add("active");
     }
 
-    // Function to go to next slide
+    // Next image
     function nextSlide() {
-        let nextIndex = (currentIndex + 1) % images.length;
-        showSlide(nextIndex);
+        showSlide((currentIndex + 1) % images.length);
     }
 
-    // Function to go to previous slide
+    // Previous image
     function prevSlide() {
-        let prevIndex = (currentIndex - 1 + images.length) % images.length;
-        showSlide(prevIndex);
+        showSlide((currentIndex - 1 + images.length) % images.length);
     }
 
-    // Function to start auto-play
+    // Start auto slide
     function startAutoPlay() {
         autoPlayInterval = setInterval(nextSlide, 4000);
     }
 
-    // Function to stop auto-play
+    // Stop auto slide
     function stopAutoPlay() {
         clearInterval(autoPlayInterval);
     }
 
-    // Add click event to previous button
+    // Prev button
     if (prevBtn) {
         prevBtn.addEventListener("click", function() {
             stopAutoPlay();
@@ -55,7 +53,7 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 
-    // Add click event to next button
+    // Next button
     if (nextBtn) {
         nextBtn.addEventListener("click", function() {
             stopAutoPlay();
@@ -64,7 +62,7 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 
-    // Add click events to indicator dots
+    // Dots click
     indicators.forEach(function(indicator, index) {
         indicator.addEventListener("click", function() {
             stopAutoPlay();
@@ -73,13 +71,13 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 
-    // Pause auto-play when hovering over banner
+    // Pause on hover
     const banner = document.querySelector(".banner");
     if (banner) {
         banner.addEventListener("mouseenter", stopAutoPlay);
         banner.addEventListener("mouseleave", startAutoPlay);
     }
 
-    // Start the auto-play
+    // Start slider
     startAutoPlay();
 });

@@ -1,13 +1,13 @@
 <?php
-include "config.php";
+include "config.php"; // load config settings
 
-// PAGE TITLE
+// page title
 $title = "Contact Us - 6ixe7ven";
 
-// PAGE-SPECIFIC CSS  (fixed)
-$extra_css = "<link rel='stylesheet' href='$BASE_URL/static/css/contact.css'>";
+// page CSS for this page only
+$extra_css = "<link rel='stylesheet' href='css/contact.css'>";
 
-// Start capturing the content block
+// start capturing page content
 ob_start();
 ?>
 
@@ -18,7 +18,7 @@ ob_start();
 
     <div class="contact-container">
 
-        <!-- LEFT : Contact Information -->
+        <!-- left side: company contact info -->
         <div class="contact-info">
             <h3>Get in Touch</h3>
             <p>Email: <strong>support@6ixe7ven.com</strong></p>
@@ -31,7 +31,7 @@ ob_start();
             <p>Sunday: Closed</p>
         </div>
 
-        <!-- RIGHT : Contact Form -->
+        <!-- right side: contact form -->
         <div class="contact-form">
             <h3>Send us a Message</h3>
 
@@ -55,9 +55,9 @@ ob_start();
 </main>
 
 <?php
-// END capturing
+// finish capturing page output
 $content = ob_get_clean();
 
-// LOAD base layout
+// load main layout template
 include "base.php";
 ?>

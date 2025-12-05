@@ -2,9 +2,7 @@ console.log("cart.js is loaded!");
 
 document.addEventListener("DOMContentLoaded", () => {
 
-    /* =====================================
-       ADD TO CART BUTTONS
-    ====================================== */
+    // Add to cart buttons
     const addButtons = document.querySelectorAll(".add-btn");
 
     addButtons.forEach(btn => {
@@ -12,63 +10,59 @@ document.addEventListener("DOMContentLoaded", () => {
 
             const name = btn.dataset.name;
 
+            // Data to send
             const formData = new FormData();
             formData.append("id", btn.dataset.id);
             formData.append("name", btn.dataset.name);
             formData.append("price", btn.dataset.price);
             formData.append("image", btn.dataset.image);
 
-            fetch("/E-Commerce-Project/add_to_cart.php", {
+            // Send to server
+            fetch("add_to_cart.php", {
                 method: "POST",
                 body: formData
             })
             .then(res => res.text())
-            .then(() => {
+            .then(resText => {
+                if (resText.trim() === "OK") {
 
-                // Added message
-                const msg = document.createElement("p");
-                msg.textContent = `${name} was added to your cart!`;
-                msg.style.color = "green";
-                msg.style.fontWeight = "bold";
-                msg.style.marginTop = "10px";
+                    // Quick success message
+                    const msg = document.createElement("p");
+                    msg.textContent = `${name} was added to your cart!`;
+                    msg.style.color = "green";
+                    msg.style.fontWeight = "bold";
+                    msg.style.marginTop = "10px";
+                    document.body.appendChild(msg);
 
-                document.body.appendChild(msg);
-
-                setTimeout(() => msg.remove(), 3000);
-
+                    setTimeout(() => msg.remove(), 3000);
+                } else {
+                    console.error("Unexpected response:", resText);
+                }
             })
-            .catch(err => console.error("ADD ERROR:", err));
+            .catch(err => console.error("Add error:", err));
         });
     });
 
-
-
-    /* =====================================
-       REMOVE FROM CART BUTTONS
-    ====================================== */
-    const removeButtons = document.querySelectorAll(".remove-btn");
+    // Remove from cart buttons
+    const removeButtons = document.querySelectorAll(".remove-item");
 
     removeButtons.forEach(btn => {
         btn.addEventListener("click", () => {
-            console.log("Remove button clicked!", btn.dataset.index);
-            
+
             const index = btn.dataset.index;
 
+            // Data to send
             const formData = new FormData();
             formData.append("index", index);
 
+            // Send remove request
             fetch("remove_from_cart.php", {
-            method: "POST",
-            body: formData
+                method: "POST",
+                body: formData
             })
-
             .then(res => res.text())
-            .then(() => {
-                // Reload page to refresh cart visually
-                window.location.reload();
-            })
-            .catch(err => console.error("REMOVE ERROR:", err));
+            .then(() => window.location.reload())
+            .catch(err => console.error("Remove error:", err));
         });
     });
-
 });

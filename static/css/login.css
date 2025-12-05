@@ -1,4 +1,4 @@
-/* Login container */
+/* Login box */
 .hero {
     max-width: 450px;
     margin: 60px auto;
@@ -9,7 +9,7 @@
     text-align: center;
 }
 
-/* Title */
+/* Page title */
 .hero h1 {
     font-size: 32px;
     color: #3d4f66;
@@ -18,14 +18,14 @@
     letter-spacing: 0.5px;
 }
 
-/* Subtitle */
+/* Subtitle text */
 .hero p {
     font-size: 16px;
     color: #5a6d8a;
     margin-bottom: 30px;
 }
 
-/* Form container */
+/* Form layout */
 .login-form {
     display: flex;
     flex-direction: column;
@@ -33,7 +33,7 @@
     margin-bottom: 25px;
 }
 
-/* Input fields */
+/* Inputs */
 .input-field {
     padding: 14px 16px;
     border: 1px solid #d6dde6;
@@ -43,6 +43,7 @@
     transition: all 0.3s ease;
 }
 
+/* Input focus effect */
 .input-field:focus {
     outline: none;
     border-color: #4a5d7a;
@@ -65,13 +66,14 @@
     transition: all 0.3s ease;
 }
 
+/* Button hover */
 .login-btn:hover {
     background-color: #3a4d6a;
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(74, 93, 122, 0.3);
 }
 
-/* Auth options */
+/* Auth choice buttons */
 .auth-options {
     display: flex;
     gap: 15px;
@@ -79,7 +81,7 @@
     margin-top: 20px;
 }
 
-/* Secondary buttons */
+/* Secondary auth buttons */
 .auth-btn {
     padding: 12px 24px;
     background-color: white;
@@ -95,6 +97,7 @@
     min-width: 130px;
 }
 
+/* Secondary hover */
 .auth-btn:hover {
     background-color: #4a5d7a;
     color: white;

@@ -1,46 +1,40 @@
 <?php
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
+$title = "Product Details - 6ixe7ven";
+$extra_css = '<link rel="stylesheet" href="/E-Commerce-Project/static/css/product_details.css">';
+$extra_js  = '<script src="/E-Commerce-Project/static/js/product_zoom.js"></script>';
 
-if (session_status() === PHP_SESSION_NONE) {
-    session_start();
-}
+$product = $_GET['product'] ?? null;
 
-$title = "Product Details";
-
-$extra_css = '
-<link rel="stylesheet" href="/E-Commerce-Project/static/css/product_details.css">
-';
-
-$extra_js = '
-<script src="/E-Commerce-Project/static/js/cart.js"></script>
-<script src="/E-Commerce-Project/static/js/product_zoom.js"></script>
-';
-
-$product_id = $_GET['id'] ?? null;
-
-// In real DB version: fetch using SQL
+// Mock product data (later you can pull this from MySQL)
 $products = [
     "hoodie1" => [
         "name" => "6ixe7ven Hoodie 1",
         "price" => "39.99",
-        "image" => "/E-Commerce-Project/static/images/hoodie1.jpeg"
+        "image" => "/E-Commerce-Project/static/images/hoodie1.jpeg",
+        "description" => "Premium cotton hoodie with modern fit."
     ],
     "hoodie2" => [
         "name" => "6ixe7ven Hoodie 2",
         "price" => "39.99",
-        "image" => "/E-Commerce-Project/static/images/hoodie2.jpeg"
+        "image" => "/E-Commerce-Project/static/images/hoodie2.jpeg",
+        "description" => "Soft fleece-lined hoodie, perfect for cold days."
     ],
     "hoodie3" => [
         "name" => "6ixe7ven Hoodie 3",
         "price" => "49.99",
-        "image" => "/E-Commerce-Project/static/images/hoodie3.jpeg"
-    ],
+        "image" => "/E-Commerce-Project/static/images/hoodie3.jpeg",
+        "description" => "Limited edition hoodie with luxury fabric."
+    ]
 ];
 
-$product = $products[$product_id] ?? null;
+// If the product doesn't exist → show 404
+if (!$product || !isset($products[$product])) {
+    die("Product not found.");
+}
 
-ob_start();
+$p = $products[$product];
+
+ob_start(); // start content
 ?>
 
 <?php if (!$product): ?>
@@ -70,7 +64,7 @@ ob_start();
 
 </div>
 
-<!-- UNIVERSAL ZOOM MODAL -->
+<!-- ZOOM MODAL -->
 <div id="zoomModal" class="zoom-modal">
     <span class="close-zoom">&times;</span>
     <img id="zoomImage" class="zoom-modal-content">
@@ -79,6 +73,6 @@ ob_start();
 <?php endif; ?>
 
 <?php
-$content = ob_get_clean();
-include "base.php";
+$content = ob_get_clean(); // grab content
+include "base.php"; // load layout
 ?>

@@ -1,12 +1,8 @@
 <?php
-// PAGE TITLE
-$title = "Home - 6ixe7ven";
+$title = "Home - 6ixe7ven"; // page title
+$extra_css = ''; // page css
 
-// PAGE-SPECIFIC CSS (if any)
-$extra_css = ''; 
-
-// Capture page content
-ob_start();
+ob_start(); // start content
 ?>
 
 <section class="hero">
@@ -16,9 +12,6 @@ ob_start();
 </section>
 
 <?php
-// End capturing content
-$content = ob_get_clean();
-
-// Load base layout
-include "base.php";
+$content = ob_get_clean(); // get content
+include "base.php"; // load layout
 ?>
