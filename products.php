@@ -1,7 +1,7 @@
 <?php
 $title = "Products - 6ixe7ven"; // page title
 
-$extra_css = '<link rel="stylesheet" href="css/products.css">'; // page css
+$extra_css = '<link rel="stylesheet" href="static/css/products.css">'; // page css
 
 ob_start(); // start content
 ?>

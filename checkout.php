@@ -10,7 +10,7 @@ if (!isset($_SESSION['user_id'])) {
 
 // Page details
 $title = "Checkout - 6ixe7ven";
-$extra_css = "<link rel='stylesheet' href='css/checkout.css'>";
+$extra_css = "<link rel='stylesheet' href='/E-Commerce-Project/static/css/checkout.css'>";
 
 // Start capturing page content
 ob_start();
@@ -18,7 +18,7 @@ ob_start();
 $cart = $_SESSION['cart'] ?? [];
 
 // If user confirms checkout, move them to order processing
-if (isset($_GET['confirm'])) {
+if (isset($_POST['confirm'])) {
     header("Location: process_order.php");
     exit;
 }
@@ -42,7 +42,7 @@ if (isset($_GET['confirm'])) {
     ?>
         <!-- Show each cart item -->
         <div class="checkout-item">
-            <img src="<?= htmlspecialchars($item['image']) ?>" alt="<?= htmlspecialchars($item['name']) ?>">
+            <img src="/E-Commerce-Project/<?= htmlspecialchars($item['image']) ?>" alt="<?= htmlspecialchars($item['name']) ?>">
             <div class="item-info">
                 <h3><?= htmlspecialchars($item['name']) ?></h3>
                 <p>Price: £<?= number_format($price,2) ?></p>
@@ -57,7 +57,7 @@ if (isset($_GET['confirm'])) {
 
         <!-- Confirm purchase button -->
         <div class="checkout-button">
-            <form action="checkout.php" method="GET">
+            <form action="checkout.php" method="POST">
                 <button type="submit" name="confirm" class="buy-now-btn">Buy Now</button>
             </form>
         </div>

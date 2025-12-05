@@ -1,40 +1,44 @@
-// Select elements
-const modal = document.getElementById("zoomModal");
-const modalImg = document.getElementById("zoomImage");
-const mainImg = document.getElementById("main-product-image");
-const closeBtn = document.querySelector(".zoom-close");
+console.log("product_zoom.js loaded ✔"); // Debug print
 
-// Open fullscreen zoom modal
-mainImg.onclick = function () {
-    modal.style.display = "block";
-    modalImg.src = this.src;
-};
+document.addEventListener("DOMContentLoaded", () => {
+    console.log("DOM fully loaded ✔");
 
-// Close by X button
-closeBtn.onclick = function () {
-    modal.style.display = "none";
-};
+    const zoomModal = document.getElementById("zoomModal");
+    const zoomImage = document.getElementById("zoomImage");
+    const zoomClose = document.getElementById("zoomClose");
+    const productImages = document.querySelectorAll(".product-card img");
 
-// Close by clicking outside the image
-modal.onclick = function (event) {
-    if (event.target === modal) {
-        modal.style.display = "none";
-    }
-};
-
-document.querySelectorAll('.product-card img').forEach(img => {
-    img.addEventListener('click', () => {
-        document.getElementById('zoomImage').src = img.src;
-        document.getElementById('zoomModal').style.display = 'flex';
+    // Debug checks
+    console.log({
+        zoomModal,
+        zoomImage,
+        zoomClose,
+        productImagesCount: productImages.length
     });
-});
 
-document.getElementById('zoomClose').addEventListener('click', () => {
-    document.getElementById('zoomModal').style.display = 'none';
-});
-
-document.getElementById('zoomModal').addEventListener('click', (e) => {
-    if (e.target.id === 'zoomModal') {
-        document.getElementById('zoomModal').style.display = 'none';
+    if (!zoomModal || !zoomImage || !zoomClose) {
+        console.error("❌ Zoom Modal elements not found. Check IDs.");
+        return;
     }
+
+    // Open modal when clicking a product image
+    productImages.forEach(img => {
+        img.addEventListener("click", () => {
+            console.log("Image clicked:", img.src);
+            zoomImage.src = img.src;
+            zoomModal.style.display = "flex"; // important
+        });
+    });
+
+    // Close when clicking the X
+    zoomClose.addEventListener("click", () => {
+        zoomModal.style.display = "none";
+    });
+
+    // Close when clicking outside the image
+    zoomModal.addEventListener("click", (e) => {
+        if (e.target.id === "zoomModal") {
+            zoomModal.style.display = "none";
+        }
+    });
 });

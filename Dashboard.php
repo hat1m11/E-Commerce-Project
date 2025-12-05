@@ -10,7 +10,7 @@ if (!isset($_SESSION['user_id'])) {
 
 // page settings
 $title = "Dashboard - 6ixe7ven";
-$extra_css = '<link rel="stylesheet" href="css/index.css">';
+$extra_css = '<link rel="stylesheet" href="static/css/index.css">';
 $extra_js = <<<EOT
 <script src="js/bannerSlide.js"></script>
 <script src="js/cart.js"></script>

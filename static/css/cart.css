@@ -167,24 +167,28 @@ hr {
 /* Checkout button wrapper */
 .checkout-button-container {
     text-align: center;
-    margin: 30px 0;
+    margin: 30px 0 60px 0;
 }
 
-/* Buy now button */
-.buy-now-btn {
+/* Buy now button - strong selector */
+a.buy-now-btn {
     background-color: #007bff;
     color: white;
     padding: 12px 30px;
     font-size: 1.1rem;
-    border: none;
     border-radius: 8px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    display: inline-block;
+    text-decoration: none;
+    font-weight: 600;
+    border: none;
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 /* Hover effect for buy now */
-.buy-now-btn:hover {
+a.buy-now-btn:hover {
     background-color: #0056b3;
+    transform: translateY(-1px);
 }
 
 /* Mobile tweaks */

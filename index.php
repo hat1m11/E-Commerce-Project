@@ -3,10 +3,10 @@ session_start();
 include "connection.php"; 
 
 $title = "Home - 6ixe7ven"; 
-$extra_css = '<link rel="stylesheet" href="css/index.css">'; 
+$extra_css = '<link rel="stylesheet" href="static/css/index.css">'; 
 $extra_js = <<<EOT
-<script src="js/bannerSlide.js"></script>
-<script src="js/cart.js"></script>
+<script src="static/js/bannerSlide.js"></script>
+<script src="static/js/cart.js"></script>
 
 <script>
 document.addEventListener("DOMContentLoaded", function() {
@@ -47,9 +47,9 @@ ob_start();
 
 <section class="banner">
     <div class="rotation">
-        <img src="images/banner/banner1.png" class="rotation-image active">
-        <img src="images/banner/banner2.jpg" class="rotation-image">
-        <img src="images/banner/banner3.jpg" class="rotation-image">
+        <img src="static/images/banner/banner1.png" class="rotation-image active">
+        <img src="static/images/banner/banner2.jpg" class="rotation-image">
+        <img src="static/images/banner/banner3.jpg" class="rotation-image">
 
         <button class="banner-arrow banner-prev">&#8249;</button>
         <button class="banner-arrow banner-next">&#8250;</button>
@@ -67,21 +67,21 @@ ob_start();
 
     <div class="product-grid">
         <div class="product-card">
-            <img src="images/hoodie1.jpeg" alt="6ixe7ven Hoodie 1">
+            <img src="static/images/hoodie1.jpeg" alt="6ixe7ven Hoodie 1">
             <h3>6ixe7ven Hoodie 1</h3>
             <p class="price">£39.99</p>
             <button class="add-btn" data-id="1" data-name="6ixe7ven Hoodie 1" data-price="39.99" data-image="images/hoodie1.jpeg">Add to Cart</button>
         </div>
 
         <div class="product-card">
-            <img src="images/hoodie2.jpeg" alt="6ixe7ven Hoodie 2">
+            <img src="static/images/hoodie2.jpeg" alt="6ixe7ven Hoodie 2">
             <h3>6ixe7ven Hoodie 2</h3>
             <p class="price">£39.99</p>
             <button class="add-btn" data-id="2" data-name="6ixe7ven Hoodie 2" data-price="39.99" data-image="images/hoodie2.jpeg">Add to Cart</button>
         </div>
 
         <div class="product-card">
-            <img src="images/hoodie3.jpeg" alt="6ixe7ven Hoodie 3">
+            <img src="static/images/hoodie3.jpeg" alt="6ixe7ven Hoodie 3">
             <h3>6ixe7ven Hoodie 3</h3>
             <p class="price">£49.99</p>
             <button class="add-btn" data-id="3" data-name="6ixe7ven Hoodie 3" data-price="49.99" data-image="images/hoodie3.jpeg">Add to Cart</button>

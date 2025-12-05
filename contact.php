@@ -5,7 +5,7 @@ include "config.php"; // load config settings
 $title = "Contact Us - 6ixe7ven";
 
 // page CSS for this page only
-$extra_css = "<link rel='stylesheet' href='css/contact.css'>";
+$extra_css = "<link rel='stylesheet' href='static/css/contact.css'>";
 
 // start capturing page content
 ob_start();
