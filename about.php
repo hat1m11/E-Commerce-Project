@@ -1,24 +1,121 @@
 <?php
-// Page title
-$title = "Home - 6ixe7ven";
+// PAGE TITLE
+$title = "About Us - 6ixe7ven";
 
-// Extra CSS for this page
-$extra_css = '<link rel="stylesheet" href="static/css/index.css">';
+// Correct path to CSS
+$extra_css = '<link rel="stylesheet" href="css/about.css">';
 
-// Start capturing page content
+// START CAPTURING PAGE CONTENT
 ob_start();
 ?>
 
 <section class="hero">
-    <h1>Welcome to 6ixe7ven</h1>
-    <p>Discover our latest products and best deals!</p>
-    <button class="shop-btn">Shop Now</button>
+    <div class="about-left">
+        <h4 class="about-subtitle">ABOUT US</h4>
+
+        <h1 class="about-title">
+            6ixe7ven<br>
+            clothing <span class="highlight">exceptional</span><br>
+            brand history.
+        </h1>
+
+        <p class="about-text">
+            We are the leading brand dedicated to delivering premium fashion and 
+            unmatched customer experiences. Our products are designed for those 
+            who value quality, confidence, and standout style.
+        </p>
+    </div>
+
+    <div class="about-right">
+        <div class="about-image">
+            <!-- FIXED IMAGE PATH -->
+            <img src="static/images/about.jpeg" alt="About us">
+        </div>
+    </div>
+</section>
+
+<section class="reviews">
+    <h2 class="reviews-heading">Customer Reviews</h2>
+    <p class="reviews-rating">5 star rating from 132 reviews</p>
+
+    <div class="review-list">
+
+        <!-- Review 1 -->
+        <div class="review">
+            <div class="review-header">
+                <img src="static/images/michael.jpeg" alt="Reviewer">
+                <div>
+                    <h4>Michael</h4>
+                    <span>1 month ago</span>
+                </div>
+            </div>
+
+            <p class="review-text">Fast delivery and amazing products!</p>
+
+            <div class="review-footer">
+                <div class="stars">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+            </div>
+        </div>
+
+        <!-- Review 2 -->
+        <div class="review">
+            <div class="review-header">
+                <img src="static/images/anne.jpeg" alt="Reviewer">
+                <div>
+                    <h4>Anne J.</h4>
+                    <span>3 weeks ago</span>
+                </div>
+            </div>
+
+            <p class="review-text">Really good quality.</p>
+
+            <div class="review-footer">
+                <div class="stars">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+            </div>
+        </div>
+
+        <!-- Review 3 -->
+        <div class="review">
+            <div class="review-header">
+                <img src="static/images/pete.jpeg" alt="Reviewer">
+                <div>
+                    <h4>Peter Johnson</h4>
+                    <span>2 months ago</span>
+                </div>
+            </div>
+
+            <p class="review-text">Lovely customer service!</p>
+
+            <div class="review-footer">
+                <div class="stars">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+            </div>
+        </div>
+
+    </div>
 </section>
 
 <?php
-// Grab the buffered content
+// END CAPTURE
 $content = ob_get_clean();
 
-// Load the base template
+// INCLUDE BASE TEMPLATE
 include "base.php";
 ?>
