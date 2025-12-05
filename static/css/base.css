@@ -1,11 +1,15 @@
-/* Page basics */
+/* ============================
+   GLOBAL BASE STYLING
+============================ */
 body {
     margin: 0;
     font-family: 'Times New Roman', Times, serif;
     background-color: #f5f7fa;
 }
 
-/* Top navbar */
+/* ============================
+   NAVBAR
+============================ */
 .navbar {
     background-color: #ffffff;
     color: #3d4f66;
@@ -16,24 +20,19 @@ body {
     box-shadow: 0 1px 3px rgba(74, 93, 122, 0.1);
 }
 
-/* Logo area */
+/* Logo */
 .logo-container {
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    margin: 0;
-    padding: 0;
 }
 
-/* Logo image */
 .logo-img {
     width: 60px;
     height: 60px;
     object-fit: contain;
-    display: block;
 }
 
-/* Logo text */
 .logo-text {
     font-size: 22px;
     font-weight: bold;
@@ -41,19 +40,18 @@ body {
     letter-spacing: 3px;
 }
 
-/* Search bar wrapper */
+/* ============================
+   SEARCH BAR
+============================ */
 .search-bar {
     flex: 1;
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 0 50px;
-    gap: 0;
 }
 
-/* Category dropdown */
 .category-select {
-    font-family: 'Times New Roman', Times, serif;
     padding: 10px 12px;
     border: 1px solid #d6dde6;
     border-right: none;
@@ -61,13 +59,10 @@ body {
     background: white;
     color: #4a5d7a;
     width: 130px;
-    font-size: 14px;
     cursor: pointer;
 }
 
-/* Search input box */
 .search-bar input {
-    font-family: 'Times New Roman', Times, serif;
     width: 350px;
     padding: 10px 15px;
     border: 1px solid #d6dde6;
@@ -78,14 +73,12 @@ body {
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Input focus look */
 .search-bar input:focus {
     outline: none;
     border-color: #4a5d7a;
     box-shadow: 0 0 8px rgba(74, 93, 122, 0.2);
 }
 
-/* Search button */
 .search-btn {
     padding: 10px 16px;
     border: 1px solid #d6dde6;
@@ -96,35 +89,33 @@ body {
     cursor: pointer;
 }
 
-/* Button hover */
 .search-btn:hover {
     background-color: #2a3d5a;
 }
 
-/* Nav links area */
+/* ============================
+   NAV LINKS
+============================ */
 nav {
     display: flex;
     gap: 35px;
     align-items: center;
 }
 
-/* Nav links */
 nav a {
     color: #4a5d7a;
     text-decoration: none;
     font-size: 14px;
     text-transform: uppercase;
     letter-spacing: 1.5px;
-    transition: color 0.4s ease;
     position: relative;
+    transition: color 0.4s ease;
 }
 
-/* Hover color */
 nav a:hover {
     color: #2a3d5a;
 }
 
-/* Underline animation */
 nav a::after {
     content: '';
     position: absolute;
@@ -140,23 +131,99 @@ nav a:hover::after {
     width: 100%;
 }
 
-/* Keep text on one line */
 nav .contact-text {
     white-space: nowrap;
 }
 
-/* Footer styling */
+/* ============================
+   FOOTER (HER VERSION, IMPROVED)
+============================ */
 .footer {
-    background-color: #f5f7fa;
-    color: #5a6d8a;
-    text-align: center;
-    padding: 25px;
-    margin-top: 60px;
-    border-top: 1px solid #d6dde6;
-    letter-spacing: 0.5px;
+    background: #3d4f66;
+    color: #bbb;
+    padding: 35px 0 25px 0;
+    width: 100%;
+    border-top: 1px solid #3d4f66;
+    margin-top: 40px;
 }
 
-/* Toast message (popup) */
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+/* Footer logo */
+.footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.footer-logo-img {
+    width: 40px;
+    height: auto;
+    opacity: 0.9;
+}
+
+.footer-text {
+    font-size: 13px;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: 1.5px;
+}
+
+/* Footer links */
+.footer-links {
+    display: flex;
+    gap: 40px;
+}
+
+.footer-links a {
+    color: #bbb;
+    font-size: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #fff;
+}
+
+/* Payment icons */
+.footer-payments {
+    display: flex;
+    gap: 15px;
+}
+
+.footer-payments i {
+    font-size: 22px;
+    color: #777;
+    transition: color 0.3s ease;
+}
+
+.footer-payments i:hover {
+    color: #fff;
+}
+
+.footer-copy {
+    margin-top: 20px;
+    font-size: 13px;
+    text-align: center;
+    color: #bbb;
+    letter-spacing: 1px;
+}
+
+/* ============================
+   TOAST MESSAGE (UNCHANGED)
+============================ */
 .toast-message {
     position: fixed !important;
     top: 20px !important;
@@ -180,7 +247,6 @@ nav .contact-text {
     transition: all 0.4s ease;
 }
 
-/* Toast visible state */
 .toast-message.show {
     opacity: 1;
     transform: translateX(0);

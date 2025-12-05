@@ -1,8 +1,9 @@
 <?php
-// Start session if it's not already running
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
+
+include_once "config.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -10,34 +11,31 @@ if (session_status() === PHP_SESSION_NONE) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Main site CSS -->
-    <link rel="stylesheet" href="static/css/base.css">
+    <!-- GLOBAL CSS -->
+    <link rel="stylesheet" href="<?= $BASE_URL ?>/css/base.css">
 
-    <!-- Extra CSS for specific pages -->
+    <!-- PAGE-SPECIFIC CSS -->
     <?php 
-        if (isset($extra_css)) {
-            echo $extra_css; 
-        }
+        if (isset($extra_css)) echo $extra_css;
     ?>
 
     <title><?= isset($title) ? $title : "6ixe7ven"; ?></title>
 
-    <!-- Icons (Font Awesome) -->
+    <!-- ICONS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 
 <body>
 
-    <!-- Site navbar -->
+    <!-- NAVBAR -->
     <header class="navbar">
 
-        <!-- Logo -->
         <div class="logo-container">
-            <img src="static/images/6ixe7venLogo.png" alt="6ixe7ven Logo" class="logo-img">
+            <img src="<?= $BASE_URL ?>/images/6ixe7venLogo.png" 
+                 alt="6ixe7ven Logo" class="logo-img">
             <span class="logo-text">6ixe7ven</span>
         </div>
 
-        <!-- Search bar -->
         <div class="search-bar">
             <select class="category-select">
                 <option value="">All</option>
@@ -55,39 +53,61 @@ if (session_status() === PHP_SESSION_NONE) {
             </button>
         </div>
 
-        <!-- Navigation links -->
         <nav>
-            <!-- Home link changes depending on login -->
-            <a href="<?php echo isset($_SESSION['user_id']) ? 'dashboard.php' : 'index.php'; ?>">
+            <!-- Your teammate removed this dynamic logic; we restore it -->
+            <a href="<?= $BASE_URL ?>/<?= isset($_SESSION['user_id']) ? 'dashboard.php' : 'index.php' ?>">
                 Home
             </a>
 
             <?php if (isset($_SESSION['user_id'])): ?>
-                <!-- If user is logged in -->
-                <a href="logout.php">Logout</a>
+                <a href="<?= $BASE_URL ?>/logout.php">Logout</a>
                 <span class="welcome-text">Hi, <?= htmlspecialchars($_SESSION['username']); ?></span>
             <?php else: ?>
-                <!-- If user is not logged in -->
-                <a href="login.php">Login</a>
+                <a href="<?= $BASE_URL ?>/login.php">Login</a>
             <?php endif; ?>
 
-            <a href="cart.php">Cart</a>
-            <a class="contact-text" href="contact.php">Contact Us</a>
+            <a href="<?= $BASE_URL ?>/cart.php">Cart</a>
+            <a class="contact-text" href="<?= $BASE_URL ?>/contact.php">Contact Us</a>
         </nav>
 
     </header>
 
-    <!-- Main page content -->
+    <!-- MAIN CONTENT -->
     <main>
         <?php if (isset($content)) echo $content; ?>
     </main>
 
-    <!-- Footer -->
+    <!-- FOOTER -->
     <footer class="footer">
-        <p>© 2025 Project 67. All rights reserved.</p>
+
+        <div class="footer-container">
+
+            <!-- Logo -->
+            <div class="footer-logo">
+                <img src="<?= $BASE_URL ?>/images/6ixe7venLogo.png" class="footer-logo-img">
+                <span class="footer-text">6ixe7ven</span>
+            </div>
+
+            <!-- Quick links -->
+            <nav class="footer-links">
+                <a href="<?= $BASE_URL ?>/about.php">About Us</a>
+                <a href="<?= $BASE_URL ?>/contact.php">Contact</a>
+                <a href="<?= $BASE_URL ?>/products.php">Shop</a>
+            </nav>
+
+            <!-- Payment icons -->
+            <div class="footer-payments">
+                <i class="fa-brands fa-cc-visa"></i>
+                <i class="fa-brands fa-cc-mastercard"></i>
+                <i class="fa-brands fa-cc-paypal"></i>
+            </div>
+
+        </div>
+
+        <p class="footer-copy">© 2025 6ixe7ven. All rights reserved.</p>
     </footer>
 
-    <!-- Page-specific JavaScript -->
+    <!-- PAGE-SPECIFIC JS -->
     <?php if (isset($extra_js)) echo $extra_js; ?>
 
 </body>
