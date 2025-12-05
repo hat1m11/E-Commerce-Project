@@ -55,7 +55,7 @@
             <a href="<?= $BASE_URL ?>/login.php">Login</a>
             <a href="<?= $BASE_URL ?>/cart.php">Cart</a>
             <a class="contact-text" href="<?= $BASE_URL ?>/contact.php">Contact Us</a>
-        </nav>
+            <nav>
 
     </header>
 

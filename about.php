@@ -9,6 +9,7 @@ $extra_css = '<link rel="stylesheet" href="static/css/about.css">';
 // START CAPTURING PAGE CONTENT
 ob_start();
 ?>
+<a href="product_listing.php" style="font-size:18px;">Go to Product Listing</a>
 
 <section class="hero">
    <div class="about-left">
@@ -38,6 +39,7 @@ ob_start();
 <section class="reviews">
     <h2 class="reviews-heading">Customer Reviews</h2>
     <p class=" reviews-rating"> 5 star rating from 132 reviews</p>
+
 
     <div class="review-list">
         <!--Review box 1 -->
@@ -101,8 +103,7 @@ ob_start();
 </div>
 </div>
 </div>
-</div>
-</section>
+
 <?php
 // END CAPTURE
 $content = ob_get_clean();

@@ -68,11 +68,12 @@
     color: 6c7893;
     margin-bottom: 40px;
 }
+
 .review-list{
     justify-content: center;
     flex-wrap: wrap;
     gap:30px;
-    display: flex;
+    display: inline-flex;
 }
 .review{
     background: #f5f7fa;
@@ -80,9 +81,19 @@
     padding: 20px;
     width: 300px;
     box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-    text-align: left;
-    flex-shrink: 0;
+    min-width: 0 15px;
 }
+.arrow{
+    background-color: #fff;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    padding: 12px 14px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    z-index: 10;
+    position: absolute;
+}
+
 .review-header{
     display: flex;
     align-items: center;
