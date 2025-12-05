@@ -65,7 +65,27 @@
     </main>
 
     <footer class="footer">
-        <p>© 2025 Project 67. All rights reserved.</p>
+        <div class="footer-container">
+            <!--logo on the left -->
+            <div class= "footer-logo">
+                <img src="<?= $BASE_URL ?>/static/images/6ixe7venLogo.png" class="footer-logo-img">
+                <span class="footer-text">6ixe7ven</span>
+            </div>
+    <!--quick links-->
+    <nav class = "footer-links">
+        <a href="<?= $BASE_URL ?>/about.php">About Us</a>
+        <a href="<?= $BASE_URL ?>/contact.php">Contact</a>
+        <a href="<?= $BASE_URL ?>/products.php">Shop</a>
+    </nav>
+    <!--Icons for payment cards -->
+    <div class ="footer-payments">
+        <i class= "fa-brands fa-cc-visa"></i>
+        <i class="fa-brands fa-cc-mastercard"></i>
+        <i class= "fa-brands fa-cc-paypal"></i>
+    </div>
+
+</div>
+    <p class="footer-copy">2025 6ixe7ven. All rights Reserved.</p>
     </footer>
 
     <!-- PAGE-SPECIFIC JS -->

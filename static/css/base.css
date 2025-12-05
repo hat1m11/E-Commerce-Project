@@ -137,17 +137,83 @@ nav .contact-text {
     white-space: nowrap;
 }
 
-/* Footer */
+/* FOOTER */
 .footer {
-    background-color: #f5f7fa;
-    color: #5a6d8a;
-    text-align: center;
-    padding: 25px;
-    margin-top: 60px;
-    border-top: 1px solid #d6dde6;
-    letter-spacing: 0.5px;
+    background:#3d4f66;
+    color:#bbb;
+    padding: 35px 0 25px 0;
+    width: 100%;
+    border-top:1px solid #3d4f66;
+    margin-top: 40px;
 }
 
+.footer-container {
+    max-width:1200px;
+    margin: 0 auto;
+    padding: 0 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.footer-logo {
+    align-items: center;
+    display: flex;
+    gap: 8px;
+}
+
+.footer-logo-img{
+    width: 40px;
+    height: auto;
+    opacity: 0.9;
+}
+.footer-text{
+    font-size: 13px;
+    font-weight: 700;
+    color:#fff;
+    letter-spacing: 1.5px;
+}
+.footer-links {
+    display: flex;
+    gap: 40px;
+}
+
+.footer-links a {
+    color: #bbb;
+    font-size: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    
+}
+.footer-links a:hover {
+    color: #fff;
+}
+
+.footer-payments {
+    display: flex;
+    gap: 15px;
+}
+.footer-payments i{
+    font-size: 22px;
+    color: #777;
+    transition:color 0.3s ease;
+}
+.footer-payments i:hover{
+    color:#fff;
+}
+
+.footer-copy{
+    margin-top: 20px;
+    font-size: 12px;
+    text-align: center;
+    color: #bbb;
+    font-size: 13px;
+    letter-spacing: 1px;
+}
 /* --- TOAST MESSAGE FIXED TOP-RIGHT --- */
 .toast-message {
     position: fixed !important;
