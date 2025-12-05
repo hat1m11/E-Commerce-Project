@@ -90,7 +90,7 @@ ob_start();
             <span>2 months ago</span>
 </div>
 </div>
-<p class="review-text">Lovely customer service!</p>
+<p class="review-text">Lovely customer service</p>
 <div class="review-footer">
       <div class = "stars">
         <i class="fa-solid fa-star"></i>
