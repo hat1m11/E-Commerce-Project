@@ -10,10 +10,10 @@ if (session_status() === PHP_SESSION_NONE) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Main site CSS -->
-    <link rel="stylesheet" href="static/css/base.css">
+    <!-- Main site CSS (direct path) -->
+    <link rel="stylesheet" href="base.css">
 
-    <!-- Extra CSS for specific pages -->
+    <!-- Extra CSS injected by product pages -->
     <?php 
         if (isset($extra_css)) {
             echo $extra_css; 
@@ -22,73 +22,60 @@ if (session_status() === PHP_SESSION_NONE) {
 
     <title><?= isset($title) ? $title : "6ixe7ven"; ?></title>
 
-    <!-- Icons (Font Awesome) -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <!-- Icons -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 
 <body>
 
-    <!-- Site navbar -->
-    <header class="navbar">
+<header class="navbar">
 
-        <!-- Logo -->
-        <div class="logo-container">
-            <img src="static/images/6ixe7venLogo.png" alt="6ixe7ven Logo" class="logo-img">
-            <span class="logo-text">6ixe7ven</span>
-        </div>
+    <!-- Logo -->
+    <div class="logo-container">
+        <img src="images/6ixe7venLogo.png" alt="6ixe7ven Logo" class="logo-img">
+        <span class="logo-text">6ixe7ven</span>
+    </div>
 
-        <!-- Search bar -->
-        <div class="search-bar">
-            <select class="category-select">
-                <option value="">All</option>
-                <option value="men">Men</option>
-                <option value="women">Women</option>
-                <option value="children">Children</option>
-                <option value="shoes">Shoes</option>
-                <option value="accessories">Accessories</option>
-            </select>
+    <!-- Navigation -->
+    <nav>
+        <a href="<?= isset($_SESSION['user_id']) ? 'dashboard.php' : 'index.php'; ?>">
+            Home
+        </a>
 
-            <input type="text" placeholder="Search products...">
+        <?php if (isset($_SESSION['user_id'])): ?>
+            <a href="logout.php">Logout</a>
+            <span class="welcome-text">Hi, <?= htmlspecialchars($_SESSION['username']); ?></span>
+        <?php else: ?>
+            <a href="login.php">Login</a>
+        <?php endif; ?>
 
-            <button class="search-btn">
-                <i class="fa-solid fa-magnifying-glass"></i>
-            </button>
-        </div>
+        <!-- Correct direct links -->
+        <a href="men.php" class="cat-link">Men's</a>
+        <a href="women.php" class="cat-link">Women's</a>
 
-        <!-- Navigation links -->
-        <nav>
-            <!-- Home link changes depending on login -->
-            <a href="<?php echo isset($_SESSION['user_id']) ? 'dashboard.php' : 'index.php'; ?>">
-                Home
-            </a>
+        <a href="cart.php">Cart</a>
+        <a class="contact-text" href="contact.php">Contact Us</a>
+    </nav>
 
-            <?php if (isset($_SESSION['user_id'])): ?>
-                <!-- If user is logged in -->
-                <a href="logout.php">Logout</a>
-                <span class="welcome-text">Hi, <?= htmlspecialchars($_SESSION['username']); ?></span>
-            <?php else: ?>
-                <!-- If user is not logged in -->
-                <a href="login.php">Login</a>
-            <?php endif; ?>
+</header>
 
-            <a href="cart.php">Cart</a>
-            <a class="contact-text" href="contact.php">Contact Us</a>
-        </nav>
+<!-- Main Content -->
+<main>
+    <?php if (isset($content)) echo $content; ?>
+</main>
 
-    </header>
+<!-- Footer -->
+<footer class="footer">
+    <p>© 2025 6ixe7ven. All rights reserved.</p>
+</footer>
 
-    <!-- Main page content -->
-    <main>
-        <?php if (isset($content)) echo $content; ?>
-    </main>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <p>© 2025 Project 67. All rights reserved.</p>
-    </footer>
-
-    <!-- Page-specific JavaScript -->
-    <?php if (isset($extra_js)) echo $extra_js; ?>
+<!-- Extra JS injected by product pages -->
+<?php 
+    if (isset($extra_js)) {
+        echo $extra_js;
+    }
+?>
 
 </body>
 </html>
