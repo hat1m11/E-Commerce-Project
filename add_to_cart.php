@@ -1,44 +1,72 @@
 <?php
 session_start();
+include "connection.php";
 
-// Make sure the cart array exists
-if (!isset($_SESSION['cart'])) $_SESSION['cart'] = [];
+if (!isset($_SESSION['cart'])) {
+    $_SESSION['cart'] = [];
+}
 
-// Handle add-to-cart POST request
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['id'])) {
-    $id = intval($_POST['id']);
-    $name = $_POST['name'] ?? '';
+    $id    = (int)$_POST['id'];
+    $name  = $_POST['name'] ?? '';
     $price = floatval($_POST['price'] ?? 0);
     $image = $_POST['image'] ?? '';
+    $size  = trim($_POST['size'] ?? 'N/A');
+    $qty   = max(1, intval($_POST['qty'] ?? 1));
 
+    if ($size === '') {
+        $size = 'N/A';
+    }
+
+    // Logged-in users: save to database
+    if (isset($_SESSION['user_id'])) {
+        $userId = (int)$_SESSION['user_id'];
+
+        $stmt = $conn->prepare("
+            INSERT INTO basket_items (user_id, product_id, size, quantity)
+            VALUES (?, ?, ?, ?)
+            ON DUPLICATE KEY UPDATE quantity = quantity + VALUES(quantity)
+        ");
+        $stmt->bind_param("iisi", $userId, $id, $size, $qty);
+
+        if ($stmt->execute()) {
+            echo "OK";
+        } else {
+            http_response_code(500);
+            echo "ERROR";
+        }
+
+        $stmt->close();
+        exit;
+    }
+
+    // Guests: keep using session
     $found = false;
 
-    // Check if item is already in the cart
     foreach ($_SESSION['cart'] as &$item) {
-        if ($item['id'] === $id) {
-            $item['qty']++;  // increase quantity
+        if ((int)$item['id'] === $id && $item['size'] === $size) {
+            $item['qty'] += $qty;
             $found = true;
             break;
         }
     }
-    unset($item); // remove reference
+    unset($item);
 
-    // If not found, add new item
     if (!$found) {
         $_SESSION['cart'][] = [
-            'id' => $id,
-            'name' => $name,
+            'id'    => $id,
+            'name'  => $name,
             'price' => $price,
             'image' => $image,
-            'qty' => 1
+            'size'  => $size,
+            'qty'   => $qty
         ];
     }
 
-    echo "OK"; // success
+    echo "OK";
     exit;
 }
 
-// Invalid request fallback
 http_response_code(400);
 echo "ERROR";
 ?>

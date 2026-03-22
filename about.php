@@ -2,12 +2,14 @@
 // PAGE TITLE
 $title = "About Us - 6ixe7ven";
 
-// Correct path to CSS
+// FIXED — Your CSS is in /css/about.css
 $extra_css = '<link rel="stylesheet" href="css/about.css">';
 
 // START CAPTURING PAGE CONTENT
 ob_start();
 ?>
+
+
 
 <section class="hero">
     <div class="about-left">
@@ -28,8 +30,8 @@ ob_start();
 
     <div class="about-right">
         <div class="about-image">
-            <!-- FIXED IMAGE PATH -->
-            <img src="static/images/about.jpeg" alt="About us">
+            <!-- FIXED — Image folder is /image/, NOT static -->
+            <img src="images/about.jpeg" alt="About Image">
         </div>
     </div>
 </section>
@@ -38,20 +40,61 @@ ob_start();
     <h2 class="reviews-heading">Customer Reviews</h2>
     <p class="reviews-rating">5 star rating from 132 reviews</p>
 
-    <div class="review-list">
-
+    <div class="review-wrapper">
+       
+	<div class="carousel-track">
         <!-- Review 1 -->
-        <div class="review">
+        <div class="review-slider">
             <div class="review-header">
-                <img src="static/images/michael.jpeg" alt="Reviewer">
+                <img src="images/michael.jpeg" alt="Michael">
                 <div>
                     <h4>Michael</h4>
                     <span>1 month ago</span>
                 </div>
             </div>
-
             <p class="review-text">Fast delivery and amazing products!</p>
-
+            <div class="review-footer">
+                <div class="stars">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+            </div>
+        </div>
+            
+              <!-- Review 2 -->
+        <div class="review-slider">
+            <div class="review-header">
+                <img src="images/max.jpeg" alt="Max">
+                <div>
+                    <h4>Max</h4>
+                    <span>2 month ago</span>
+                </div>
+            </div>
+            <p class="review-text">Easy to browse</p>
+            <div class="review-footer">
+                <div class="stars">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+            </div>
+        </div>
+            
+              <!-- Review 3 -->
+        <div class="review-slider">
+            <div class="review-header">
+                <img src="images/jane.jpeg" alt="Jane">
+                <div>
+                    <h4>Jane</h4>
+                    <span>1 day ago</span>
+                </div>
+            </div>
+            <p class="review-text">Loved the chatbot gave me good recommendations!</p>
             <div class="review-footer">
                 <div class="stars">
                     <i class="fa-solid fa-star"></i>
@@ -63,18 +106,16 @@ ob_start();
             </div>
         </div>
 
-        <!-- Review 2 -->
-        <div class="review">
+        <!-- Review 4 -->
+        <div class="review-slider">
             <div class="review-header">
-                <img src="static/images/anne.jpeg" alt="Reviewer">
+                <img src="images/anne.jpeg" alt="Anne">
                 <div>
                     <h4>Anne J.</h4>
                     <span>3 weeks ago</span>
                 </div>
             </div>
-
-            <p class="review-text">Really good quality.</p>
-
+            <p class="review-text">Really good quality</p>
             <div class="review-footer">
                 <div class="stars">
                     <i class="fa-solid fa-star"></i>
@@ -86,18 +127,16 @@ ob_start();
             </div>
         </div>
 
-        <!-- Review 3 -->
-        <div class="review">
+        <!-- Review 5 -->
+        <div class="review-slider">
             <div class="review-header">
-                <img src="static/images/pete.jpeg" alt="Reviewer">
+                <img src="images/pete.jpeg" alt="Peter">
                 <div>
                     <h4>Peter Johnson</h4>
                     <span>2 months ago</span>
                 </div>
             </div>
-
-            <p class="review-text">Lovely customer service!</p>
-
+            <p class="review-text">Lovely customer service</p>
             <div class="review-footer">
                 <div class="stars">
                     <i class="fa-solid fa-star"></i>
@@ -108,7 +147,7 @@ ob_start();
                 </div>
             </div>
         </div>
-
+      </div>
     </div>
 </section>
 
