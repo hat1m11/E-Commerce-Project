@@ -11,7 +11,6 @@ $success = "";
 
 $allowedStatuses = ["new", "seen", "closed"];
 
-// Update status / delete
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $action = $_POST["action"] ?? "";
     $contactId = (int)($_POST["contact_id"] ?? 0);
@@ -50,11 +49,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     }
 }
 
-// Filters
 $statusFilter = trim($_GET["status"] ?? "");
 $q = trim($_GET["q"] ?? "");
 
-// Fetch messages
 $sql = "SELECT contact_id, name, email, subject, message, status, created_at FROM contact_requests";
 $where = [];
 $params = [];
